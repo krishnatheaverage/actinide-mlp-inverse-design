@@ -1,0 +1,37 @@
+  [CH4-UA T=320.0 P=150.0] window 1/24 lambda=1.00 done (133s)
+  [CH4-UA T=320.0 P=150.0] window 2/24 lambda=0.93 done (266s)
+  [CH4-UA T=320.0 P=150.0] window 3/24 lambda=0.86 done (393s)
+  [CH4-UA T=320.0 P=150.0] window 4/24 lambda=0.79 done (502s)
+  [CH4-UA T=320.0 P=150.0] window 5/24 lambda=0.72 done (602s)
+  [CH4-UA T=320.0 P=150.0] window 6/24 lambda=0.65 done (700s)
+  [CH4-UA T=320.0 P=150.0] window 7/24 lambda=0.58 done (803s)
+  [CH4-UA T=320.0 P=150.0] window 8/24 lambda=0.51 done (901s)
+  [CH4-UA T=320.0 P=150.0] window 9/24 lambda=0.44 done (999s)
+  [CH4-UA T=320.0 P=150.0] window 10/24 lambda=0.37 done (1098s)
+  [CH4-UA T=320.0 P=150.0] window 11/24 lambda=0.30 done (1191s)
+  [CH4-UA T=320.0 P=150.0] window 12/24 lambda=0.28 done (1291s)
+  [CH4-UA T=320.0 P=150.0] window 13/24 lambda=0.25 done (1396s)
+  [CH4-UA T=320.0 P=150.0] window 14/24 lambda=0.23 done (1496s)
+  [CH4-UA T=320.0 P=150.0] window 15/24 lambda=0.21 done (1607s)
+  [CH4-UA T=320.0 P=150.0] window 16/24 lambda=0.18 done (1715s)
+  [CH4-UA T=320.0 P=150.0] window 17/24 lambda=0.16 done (1823s)
+  [CH4-UA T=320.0 P=150.0] window 18/24 lambda=0.14 done (1932s)
+  [CH4-UA T=320.0 P=150.0] window 19/24 lambda=0.12 done (2063s)
+  [CH4-UA T=320.0 P=150.0] window 20/24 lambda=0.09 done (2207s)
+  [CH4-UA T=320.0 P=150.0] window 21/24 lambda=0.07 done (2331s)
+  [CH4-UA T=320.0 P=150.0] window 22/24 lambda=0.05 done (2454s)
+  [CH4-UA T=320.0 P=150.0] window 23/24 lambda=0.02 done (4996s)
+  [CH4-UA T=320.0 P=150.0] window 24/24 lambda=0.00 done (5117s)
+Warning on use of the timeseries module: If the inherent timescales of the system are long compared to those being analyzed, this statistical inefficiency may be an underestimate.  The estimate presumes the use of many statistically independent samples.  Tests should be performed to assess whether this condition is satisfied.   Be cautious in the interpretation of the data.
+
+********* JAX NOT FOUND *********
+ PyMBAR can run faster with JAX  
+ But will work fine without it   
+Either install with pip or conda:
+      pip install pymbar[jax]     
+               OR                
+      conda install pymbar       
+*********************************
+==> CH4-UA T=320.0K P=150.0bar rho=0.727: dG_solv = -1.15 +/- 0.12 kJ/mol  min adj-overlap=0.062
+FINE dG=-1.15+/-0.12 min_overlap=0.062 nwin=24
+FINE_FE_DONE

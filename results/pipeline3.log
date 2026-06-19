@@ -1,0 +1,7 @@
+[pipe3 15:51:27] V_min surrogate oracle (~246 ligands, resumes from cache)
+[pipe3 16:47:58] oracle done (rc=0)
+[pipe3 16:47:58] generative design (GB-GA + baselines + metrics)
+[pipe3 16:48:23] generative done (rc=0)
+[pipe3 16:48:23] X2C-DFT An/Ln rescore of top candidates
+[pipe3 17:13:27] rescore done (rc=0)
+[pipe3 17:13:28] PIPELINE3_DONE

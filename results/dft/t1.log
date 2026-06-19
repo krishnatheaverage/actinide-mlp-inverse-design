@@ -1,0 +1,7 @@
+
+WARN: Even tempered Gaussians are generated as DF auxbasis for  U
+
+converged SCF energy = -28142.1301950959
+E(RCCSD) = -28142.75775007002  E_corr = -0.6275549741453676
+T1 diagnostic = 0.0311  (nocc_corr=10, frozen=43)
+T1_DONE

@@ -1,0 +1,348 @@
+
+[A] Relativistic effect on uranyl U=O bond
+  x2c: r(U=O)_min = 1.6850 A
+  nonrel: r(U=O)_min = 1.6340 A
+  relativistic bond contraction = -5.11 pm
+
+[B/C] Complexation + An/Ln selectivity (acetate donor)
+geometric-optimize called with the following command line:
+src/01_relativistic_dft/run_dft.py
+
+                                        [91m())))))))))))))))/[0m                     
+                                    [91m())))))))))))))))))))))))),[0m                
+                                [91m*)))))))))))))))))))))))))))))))))[0m             
+                        [94m#,[0m    [91m()))))))))/[0m                [91m.)))))))))),[0m          
+                      [94m#%%%%,[0m  [91m())))))[0m                        [91m.))))))))*[0m        
+                      [94m*%%%%%%,[0m  [91m))[0m              [93m..[0m              [91m,))))))).[0m      
+                        [94m*%%%%%%,[0m         [93m***************/.[0m        [91m.)))))))[0m     
+                [94m#%%/[0m      [94m(%%%%%%,[0m    [93m/*********************.[0m       [91m)))))))[0m    
+              [94m.%%%%%%#[0m      [94m*%%%%%%,[0m  [93m*******/,[0m     [93m**********,[0m      [91m.))))))[0m   
+                [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [93m**[0m              [93m********[0m      [91m.))))))[0m  
+          [94m##[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m                  [93m,******[0m      [91m/)))))[0m  
+        [94m%%%%%%[0m      [94m.%%%%%%#[0m      [94m*%%%%%%,[0m    [92m,/////.[0m       [93m******[0m      [91m))))))[0m 
+      [94m#%[0m      [94m%%[0m      [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [92m////////,[0m      [93m*****/[0m     [91m,)))))[0m 
+    [94m#%%[0m  [94m%%%[0m  [94m%%%#[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m  [92m///////.[0m     [93m/*****[0m      [91m))))).[0m
+  [94m#%%%%.[0m      [94m%%%%%#[0m      [94m/%%%%%%*[0m      [94m#%%%%%%[0m   [92m/////)[0m     [93m******[0m      [91m))))),[0m
+    [94m#%%%%##%[0m  [94m%%%#[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m  [92m///////.[0m     [93m/*****[0m      [91m))))).[0m
+      [94m##[0m     [94m%%%[0m      [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [92m////////.[0m      [93m*****/[0m     [91m,)))))[0m 
+        [94m#%%%%#[0m      [94m/%%%%%%/[0m      [94m(%%%%%%[0m      [92m/)/)//[0m       [93m******[0m      [91m))))))[0m 
+          [94m##[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m                  [93m*******[0m      [91m))))))[0m  
+                [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [93m**.[0m             [93m/*******[0m      [91m.))))))[0m  
+              [94m*%%%%%%/[0m      [94m(%%%%%%[0m   [93m********/*..,*/*********[0m       [91m*))))))[0m   
+                [94m#%%/[0m      [94m(%%%%%%,[0m    [93m*********************/[0m        [91m)))))))[0m    
+                        [94m*%%%%%%,[0m         [93m,**************/[0m         [91m,))))))/[0m     
+                      [94m(%%%%%%[0m   [91m()[0m                              [91m))))))))[0m       
+                      [94m#%%%%,[0m  [91m())))))[0m                        [91m,)))))))),[0m        
+                        [94m#,[0m    [91m())))))))))[0m                [91m,)))))))))).[0m          
+                                 [91m()))))))))))))))))))))))))))))))/[0m             
+                                    [91m())))))))))))))))))))))))).[0m                
+                                         [91m())))))))))))))),[0m                     
+
+-=# [1;94m geomeTRIC started. Version: 1.1.1 [0m #=-
+Current date and time: 2026-06-17 15:17:18
+#========================================================#
+#| [92m    Arguments passed to driver run_optimizer():     [0m |#
+#========================================================#
+customengine              <pyscf.geomopt.geometric_solver.PySCFEngine object at 0x11aea9850> 
+input                     /var/folders/1g/6jgk0wys4_95_k01fb2f6jq40000gn/T/tmpso8llt_w/7cb0af54-7119-435e-9749-e09391b74422 
+logIni                    /Users/krishnaharish/miniforge3/envs/actinide/lib/python3.11/site-packages/pyscf/geomopt/log.ini 
+maxiter                   80 
+----------------------------------------------------------
+Custom engine selected.
+Bonds will be generated from interatomic distances less than 1.20 times sum of covalent radii
+24 internal coordinates being used (instead of 24 Cartesians)
+Internal coordinate system (atoms numbered from 1):
+Distance 1-2
+Distance 1-4
+Distance 1-5
+Distance 1-6
+Distance 2-3
+Distance 2-4
+Distance 2-5
+Distance 5-6
+Distance 5-7
+Distance 5-8
+Angle 2-1-6
+Angle 4-1-6
+Angle 5-1-6
+Angle 3-2-5
+Angle 4-2-5
+Angle 1-4-2
+Angle 1-5-6
+Angle 1-5-8
+Angle 2-5-6
+Angle 2-5-7
+Angle 2-5-8
+Angle 6-5-7
+Angle 6-5-8
+Angle 7-5-8
+Angle 1-6-5
+LinearAngleX 1-2-3
+LinearAngleY 1-2-3
+Out-of-Plane 1-2-4-5
+Out-of-Plane 1-2-4-6
+Out-of-Plane 1-2-5-6
+Out-of-Plane 1-4-5-6
+Out-of-Plane 2-1-4-3
+Out-of-Plane 2-1-5-3
+Out-of-Plane 2-1-4-5
+Out-of-Plane 2-3-4-5
+Out-of-Plane 5-1-2-6
+Out-of-Plane 5-1-7-8
+Dihedral 4-1-2-5
+Dihedral 5-1-2-4
+Dihedral 6-1-2-4
+Dihedral 6-1-2-5
+Dihedral 5-1-4-2
+Dihedral 6-1-4-2
+Dihedral 2-1-5-6
+Dihedral 2-1-5-7
+Dihedral 2-1-5-8
+Dihedral 4-1-5-2
+Dihedral 4-1-5-6
+Dihedral 4-1-5-7
+Dihedral 4-1-5-8
+Dihedral 6-1-5-2
+Dihedral 6-1-5-7
+Dihedral 6-1-5-8
+Dihedral 2-1-6-5
+Dihedral 4-1-6-5
+Dihedral 3-2-4-1
+Dihedral 5-2-4-1
+Dihedral 1-2-5-6
+Dihedral 1-2-5-7
+Dihedral 1-2-5-8
+Dihedral 3-2-5-1
+Dihedral 3-2-5-6
+Dihedral 3-2-5-7
+Dihedral 3-2-5-8
+Dihedral 4-2-5-1
+Dihedral 4-2-5-6
+Dihedral 4-2-5-7
+Dihedral 4-2-5-8
+Dihedral 2-5-6-1
+Dihedral 7-5-6-1
+Dihedral 8-5-6-1
+Translation-X 1-8
+Translation-Y 1-8
+Translation-Z 1-8
+Rotation-A 1-8
+Rotation-B 1-8
+Rotation-C 1-8
+<class 'geometric.internal.Distance'> : 10
+<class 'geometric.internal.Angle'> : 15
+<class 'geometric.internal.LinearAngle'> : 2
+<class 'geometric.internal.OutOfPlane'> : 10
+<class 'geometric.internal.Dihedral'> : 34
+<class 'geometric.internal.TranslationX'> : 1
+<class 'geometric.internal.TranslationY'> : 1
+<class 'geometric.internal.TranslationZ'> : 1
+<class 'geometric.internal.RotationA'> : 1
+<class 'geometric.internal.RotationB'> : 1
+<class 'geometric.internal.RotationC'> : 1
+> ===== Optimization Info: ====
+> Job type: Energy minimization
+> Maximum number of optimization cycles: 80
+> Initial / maximum trust radius (Angstrom): 0.100 / 0.300
+> Convergence Criteria:
+> Will converge when all 5 criteria are reached:
+>  |Delta-E| < 1.00e-06
+>  RMS-Grad  < 3.00e-04
+>  Max-Grad  < 4.50e-04
+>  RMS-Disp  < 1.20e-03
+>  Max-Disp  < 1.80e-03
+> === End Optimization Info ===
+Step    0 : Gradient = 2.487e-01/5.201e-01 (rms/max) Energy = -8718.7576406929
+Hessian Eigenvalues: 2.61831e-02 2.69279e-02 4.47722e-02 ... 3.47610e-01 8.28674e-01 8.32368e-01
+Step    1 : Displace = [0m1.059e-01[0m/[0m2.047e-01[0m (rms/max) Trust = 1.000e-01 (=) Grad = [0m9.143e-02[0m/[0m1.815e-01[0m (rms/max) E (change) = -8718.9664218336 ([0m-2.088e-01[0m) Quality = [0m0.790[0m
+Hessian Eigenvalues: 2.61832e-02 2.69280e-02 4.47728e-02 ... 3.73959e-01 7.98265e-01 8.31973e-01
+Step    2 : Displace = [0m6.644e-02[0m/[0m1.280e-01[0m (rms/max) Trust = 1.414e-01 ([92m+[0m) Grad = [0m4.336e-02[0m/[0m9.316e-02[0m (rms/max) E (change) = -8719.0184841065 ([0m-5.206e-02[0m) Quality = [0m1.377[0m
+Hessian Eigenvalues: 2.61826e-02 2.69279e-02 4.47671e-02 ... 3.47041e-01 8.07848e-01 8.38945e-01
+Step    3 : Displace = [0m6.177e-02[0m/[0m1.243e-01[0m (rms/max) Trust = 2.000e-01 ([92m+[0m) Grad = [0m2.347e-02[0m/[0m4.709e-02[0m (rms/max) E (change) = -8719.0431608310 ([0m-2.468e-02[0m) Quality = [0m1.375[0m
+Hessian Eigenvalues: 2.61817e-02 2.69276e-02 4.47643e-02 ... 3.52601e-01 8.08787e-01 8.41349e-01
+Step    4 : Displace = [0m6.159e-02[0m/[0m1.276e-01[0m (rms/max) Trust = 2.828e-01 ([92m+[0m) Grad = [0m1.573e-02[0m/[0m2.854e-02[0m (rms/max) E (change) = -8719.0558167329 ([0m-1.266e-02[0m) Quality = [0m1.448[0m
+Hessian Eigenvalues: 2.61811e-02 2.69248e-02 2.79588e-02 ... 3.70737e-01 8.13358e-01 8.34365e-01
+Step    5 : Displace = [0m8.528e-02[0m/[0m1.894e-01[0m (rms/max) Trust = 3.000e-01 ([92m+[0m) Grad = [0m1.376e-02[0m/[0m2.485e-02[0m (rms/max) E (change) = -8719.0671078577 ([0m-1.129e-02[0m) Quality = [0m1.489[0m
+Hessian Eigenvalues: 1.27133e-02 2.61853e-02 2.69282e-02 ... 3.60483e-01 8.12125e-01 8.36744e-01
+Step    6 : Displace = [0m1.320e-01[0m/[0m2.823e-01[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.772e-02[0m/[0m3.508e-02[0m (rms/max) E (change) = -8719.0765158099 ([0m-9.408e-03[0m) Quality = [0m1.258[0m
+Hessian Eigenvalues: 7.55443e-03 2.61865e-02 2.69281e-02 ... 4.58302e-01 8.07133e-01 8.36726e-01
+Step    7 : Displace = [0m1.052e-01[0m/[0m2.184e-01[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m2.337e-02[0m/[0m4.629e-02[0m (rms/max) E (change) = -8719.0824876019 ([0m-5.972e-03[0m) Quality = [0m1.733[0m
+Hessian Eigenvalues: 1.95432e-03 2.61921e-02 2.69281e-02 ... 5.08070e-01 8.10001e-01 8.69787e-01
+Step    8 : Displace = [0m1.614e-01[0m/[0m2.790e-01[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m2.289e-02[0m/[0m4.859e-02[0m (rms/max) E (change) = -8719.0838272835 ([91m-1.340e-03[0m) Quality = [91m-0.025[0m
+Hessian Eigenvalues: 1.23833e-03 1.35827e-02 2.62191e-02 ... 5.06479e-01 8.11712e-01 8.71051e-01
+Step    9 : Displace = [0m7.455e-02[0m/[0m1.147e-01[0m (rms/max) Trust = 8.069e-02 ([91m-[0m) Grad = [0m1.417e-02[0m/[0m2.379e-02[0m (rms/max) E (change) = -8719.0912718209 ([0m-7.445e-03[0m) Quality = [0m0.802[0m
+Hessian Eigenvalues: 1.46520e-03 1.89935e-02 2.62342e-02 ... 4.59373e-01 8.31560e-01 8.76387e-01
+Step   10 : Displace = [0m9.637e-02[0m/[0m1.287e-01[0m (rms/max) Trust = 1.141e-01 ([92m+[0m) Grad = [0m1.300e-02[0m/[0m2.482e-02[0m (rms/max) E (change) = -8719.0901113243 ([91m+1.160e-03[0m) Quality = [91m-0.331[0m
+Hessian Eigenvalues: 3.35522e-03 2.16526e-02 2.62248e-02 ... 4.41365e-01 8.34550e-01 8.79421e-01
+Step   11 : Displace = [0m4.596e-02[0m/[0m7.785e-02[0m (rms/max) Trust = 4.818e-02 ([91m-[0m) Grad = [0m7.471e-03[0m/[0m1.198e-02[0m (rms/max) E (change) = -8719.0941315217 ([0m-4.020e-03[0m) Quality = [0m0.900[0m
+Hessian Eigenvalues: 3.78274e-03 2.48527e-02 2.62258e-02 ... 4.49258e-01 8.40620e-01 8.75651e-01
+Step   12 : Displace = [0m6.779e-02[0m/[0m1.370e-01[0m (rms/max) Trust = 6.814e-02 ([92m+[0m) Grad = [0m7.473e-03[0m/[0m1.278e-02[0m (rms/max) E (change) = -8719.0971333457 ([0m-3.002e-03[0m) Quality = [0m1.082[0m
+Hessian Eigenvalues: 3.41013e-03 2.16673e-02 2.60908e-02 ... 4.46279e-01 8.39113e-01 9.48806e-01
+Step   13 : Displace = [0m4.436e-02[0m/[0m8.404e-02[0m (rms/max) Trust = 9.637e-02 ([92m+[0m) Grad = [0m6.118e-03[0m/[0m1.161e-02[0m (rms/max) E (change) = -8719.0994513832 ([0m-2.318e-03[0m) Quality = [0m0.925[0m
+Hessian Eigenvalues: 3.51151e-03 2.35949e-02 2.62470e-02 ... 4.65545e-01 8.37812e-01 9.94034e-01
+[91mInverse iteration for Cartesians failed[0m
+[1;94mInternal coordinate system may have changed[0m
+-- Added: --
+LinearAngleX 1-4-2
+LinearAngleY 1-4-2
+-- Deleted: --
+Distance 1-2
+Distance 1-5
+Distance 1-6
+Angle 2-1-6
+Angle 4-1-6
+Angle 5-1-6
+Angle 1-4-2
+Angle 1-5-6
+Angle 1-5-8
+Angle 1-6-5
+LinearAngleX 1-2-3
+LinearAngleY 1-2-3
+Out-of-Plane 1-2-4-5
+Out-of-Plane 1-2-4-6
+Out-of-Plane 1-2-5-6
+Out-of-Plane 1-4-5-6
+Out-of-Plane 2-1-4-3
+Out-of-Plane 2-1-5-3
+Out-of-Plane 2-1-4-5
+Out-of-Plane 5-1-2-6
+Out-of-Plane 5-1-7-8
+Dihedral 4-1-2-5
+Dihedral 5-1-2-4
+Dihedral 6-1-2-4
+Dihedral 6-1-2-5
+Dihedral 5-1-4-2
+Dihedral 6-1-4-2
+Dihedral 2-1-5-6
+Dihedral 2-1-5-7
+Dihedral 2-1-5-8
+Dihedral 4-1-5-2
+Dihedral 4-1-5-6
+Dihedral 4-1-5-7
+Dihedral 4-1-5-8
+Dihedral 6-1-5-2
+Dihedral 6-1-5-7
+Dihedral 6-1-5-8
+Dihedral 2-1-6-5
+Dihedral 4-1-6-5
+Dihedral 3-2-4-1
+Dihedral 5-2-4-1
+Dihedral 1-2-5-6
+Dihedral 1-2-5-7
+Dihedral 1-2-5-8
+Dihedral 3-2-5-1
+Dihedral 4-2-5-1
+Dihedral 2-5-6-1
+Dihedral 7-5-6-1
+Dihedral 8-5-6-1
+Refreshing coordinate system and resetting rotations
+Updating Hessian using 6 steps from history
+[1;93mSkipping optimization step[0m
+Hessian Eigenvalues: 1.54253e-02 3.08845e-02 4.34745e-02 ... 4.28931e-01 6.09831e-01 9.49529e-01
+Step   14 : Displace = [0m1.363e-01[0m/[0m2.595e-01[0m (rms/max) Trust = 1.363e-01 ([92m+[0m) Grad = [0m5.626e-03[0m/[0m8.711e-03[0m (rms/max) E (change) = -8719.1041630836 ([0m-4.712e-03[0m) Quality = [0m1.049[0m
+Hessian Eigenvalues: 1.54473e-02 3.04070e-02 4.33667e-02 ... 4.29764e-01 6.53957e-01 9.32132e-01
+Step   15 : Displace = [0m1.065e-01[0m/[0m1.958e-01[0m (rms/max) Trust = 1.927e-01 ([92m+[0m) Grad = [0m7.064e-03[0m/[0m1.074e-02[0m (rms/max) E (change) = -8719.1051365097 ([0m-9.734e-04[0m) Quality = [0m0.687[0m
+Hessian Eigenvalues: 1.51998e-02 3.69283e-02 4.28379e-02 ... 4.31093e-01 6.59758e-01 9.87875e-01
+Step   16 : Displace = [0m1.961e-02[0m/[0m3.244e-02[0m (rms/max) Trust = 1.927e-01 (=) Grad = [0m4.308e-03[0m/[0m8.505e-03[0m (rms/max) E (change) = -8719.1052821528 ([0m-1.456e-04[0m) Quality = [0m0.332[0m
+Hessian Eigenvalues: 1.53536e-02 3.44383e-02 4.35298e-02 ... 4.30242e-01 6.44197e-01 9.38387e-01
+Step   17 : Displace = [0m1.370e-02[0m/[0m2.464e-02[0m (rms/max) Trust = 1.927e-01 (=) Grad = [0m1.689e-03[0m/[0m3.367e-03[0m (rms/max) E (change) = -8719.1054434655 ([0m-1.613e-04[0m) Quality = [0m0.940[0m
+Hessian Eigenvalues: 1.54815e-02 3.52386e-02 4.41829e-02 ... 4.33526e-01 6.80147e-01 9.65194e-01
+Step   18 : Displace = [0m2.189e-03[0m/[0m3.181e-03[0m (rms/max) Trust = 2.726e-01 ([92m+[0m) Grad = [0m6.782e-04[0m/[0m1.400e-03[0m (rms/max) E (change) = -8719.1054532275 ([0m-9.762e-06[0m) Quality = [0m0.902[0m
+Hessian Eigenvalues: 1.42877e-02 3.39310e-02 4.26773e-02 ... 4.20003e-01 7.14480e-01 1.33059e+00
+Step   19 : Displace = [0m1.558e-03[0m/[0m2.124e-03[0m (rms/max) Trust = 3.000e-01 ([92m+[0m) Grad = [0m4.791e-04[0m/[0m8.765e-04[0m (rms/max) E (change) = -8719.1054568821 ([0m-3.655e-06[0m) Quality = [0m1.473[0m
+Hessian Eigenvalues: 5.60025e-03 2.66986e-02 3.81285e-02 ... 4.98506e-01 7.04741e-01 1.19201e+00
+Step   20 : Displace = [0m1.072e-02[0m/[0m1.498e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m8.518e-04[0m/[0m1.432e-03[0m (rms/max) E (change) = -8719.1054723790 ([0m-1.550e-05[0m) Quality = [0m1.118[0m
+Hessian Eigenvalues: 2.62702e-03 2.48654e-02 3.84079e-02 ... 5.55152e-01 7.05315e-01 1.27430e+00
+Step   21 : Displace = [0m1.720e-02[0m/[0m2.381e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.556e-03[0m/[0m2.853e-03[0m (rms/max) E (change) = -8719.1054934235 ([0m-2.104e-05[0m) Quality = [0m1.371[0m
+Hessian Eigenvalues: 6.85269e-04 2.38293e-02 3.89183e-02 ... 5.50393e-01 7.05767e-01 1.36829e+00
+Step   22 : Displace = [0m7.661e-02[0m/[0m1.068e-01[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m3.248e-03[0m/[0m5.935e-03[0m (rms/max) E (change) = -8719.1056143021 ([0m-1.209e-04[0m) Quality = [0m1.839[0m
+Hessian Eigenvalues: 4.99554e-05 2.41370e-02 4.07876e-02 ... 6.96756e-01 7.98066e-01 1.54240e+00
+Step   23 : Displace = [0m2.779e-01[0m/[0m3.949e-01[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m8.063e-03[0m/[0m1.646e-02[0m (rms/max) E (change) = -8719.1062853526 ([0m-6.711e-04[0m) Quality = [0m1.561[0m
+Hessian Eigenvalues: 1.43048e-04 2.37713e-02 4.07921e-02 ... 6.93835e-01 9.98556e-01 1.55182e+00
+Step   24 : Displace = [0m1.730e-01[0m/[0m2.538e-01[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.059e-02[0m/[0m2.056e-02[0m (rms/max) E (change) = -8719.1064907863 ([0m-2.054e-04[0m) Quality = [0m0.779[0m
+Hessian Eigenvalues: 7.08970e-04 2.34903e-02 4.14974e-02 ... 5.13644e-01 7.07283e-01 1.52339e+00
+Step   25 : Displace = [0m6.210e-02[0m/[0m8.657e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m9.703e-03[0m/[0m1.819e-02[0m (rms/max) E (change) = -8719.1077485260 ([0m-1.258e-03[0m) Quality = [0m1.039[0m
+Hessian Eigenvalues: 7.53478e-04 2.33837e-02 4.05791e-02 ... 4.71592e-01 7.18671e-01 1.81443e+00
+Step   26 : Displace = [0m6.174e-02[0m/[0m9.392e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m7.063e-03[0m/[0m1.222e-02[0m (rms/max) E (change) = -8719.1084393076 ([0m-6.908e-04[0m) Quality = [0m1.466[0m
+Hessian Eigenvalues: 1.14496e-03 2.26043e-02 3.27927e-02 ... 4.70903e-01 7.17049e-01 1.52615e+00
+Step   27 : Displace = [0m1.061e-01[0m/[0m1.553e-01[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m8.667e-03[0m/[0m1.375e-02[0m (rms/max) E (change) = -8719.1094209105 ([0m-9.816e-04[0m) Quality = [0m0.889[0m
+Hessian Eigenvalues: 1.41870e-03 2.29777e-02 2.85043e-02 ... 4.75610e-01 7.20677e-01 1.72567e+00
+Step   28 : Displace = [0m4.420e-02[0m/[0m6.352e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m3.923e-03[0m/[0m6.615e-03[0m (rms/max) E (change) = -8719.1100154832 ([0m-5.946e-04[0m) Quality = [0m1.212[0m
+Hessian Eigenvalues: 1.48762e-03 2.28439e-02 3.19935e-02 ... 4.79639e-01 7.18679e-01 1.64173e+00
+Step   29 : Displace = [0m4.014e-02[0m/[0m5.241e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.476e-03[0m/[0m3.250e-03[0m (rms/max) E (change) = -8719.1102702804 ([0m-2.548e-04[0m) Quality = [0m1.346[0m
+Hessian Eigenvalues: 9.18085e-04 2.22312e-02 3.13803e-02 ... 4.80462e-01 6.92439e-01 1.69003e+00
+Step   30 : Displace = [0m6.305e-02[0m/[0m8.506e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.615e-03[0m/[0m3.322e-03[0m (rms/max) E (change) = -8719.1103760582 ([0m-1.058e-04[0m) Quality = [0m0.914[0m
+Hessian Eigenvalues: 7.93366e-04 2.15458e-02 3.12966e-02 ... 4.84036e-01 6.82146e-01 1.69259e+00
+Step   31 : Displace = [0m1.580e-02[0m/[0m2.487e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.562e-03[0m/[0m3.255e-03[0m (rms/max) E (change) = -8719.1103974261 ([0m-2.137e-05[0m) Quality = [0m1.503[0m
+Hessian Eigenvalues: 5.92613e-04 1.85860e-02 3.10586e-02 ... 4.51625e-01 6.73909e-01 1.66979e+00
+Step   32 : Displace = [0m3.219e-02[0m/[0m5.209e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.348e-03[0m/[0m2.873e-03[0m (rms/max) E (change) = -8719.1104342211 ([0m-3.679e-05[0m) Quality = [0m1.387[0m
+Hessian Eigenvalues: 3.85905e-04 1.67061e-02 3.07042e-02 ... 4.52577e-01 6.72435e-01 1.65532e+00
+Step   33 : Displace = [0m4.374e-02[0m/[0m7.009e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.073e-03[0m/[0m2.412e-03[0m (rms/max) E (change) = -8719.1104650995 ([0m-3.088e-05[0m) Quality = [0m1.393[0m
+Hessian Eigenvalues: 3.30209e-04 1.54369e-02 2.98658e-02 ... 4.54445e-01 6.73129e-01 1.64860e+00
+Step   34 : Displace = [0m2.572e-02[0m/[0m4.122e-02[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.006e-03[0m/[0m2.319e-03[0m (rms/max) E (change) = -8719.1104799365 ([0m-1.484e-05[0m) Quality = [0m1.863[0m
+Hessian Eigenvalues: 3.87090e-04 1.38644e-02 2.80178e-02 ... 4.54871e-01 6.73272e-01 1.64196e+00
+Step   35 : Displace = [0m3.096e-03[0m/[0m4.089e-03[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m1.018e-03[0m/[0m2.344e-03[0m (rms/max) E (change) = -8719.1104821133 ([0m-2.177e-06[0m) Quality = [0m1.585[0m
+Hessian Eigenvalues: 3.78875e-04 1.02277e-02 2.65359e-02 ... 4.59500e-01 6.75884e-01 1.60762e+00
+Step   36 : Displace = [0m2.947e-03[0m/[0m4.718e-03[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m9.824e-04[0m/[0m2.266e-03[0m (rms/max) E (change) = -8719.1104826613 ([92m-5.480e-07[0m) Quality = [0m0.479[0m
+Hessian Eigenvalues: 3.18010e-04 6.22120e-03 2.45345e-02 ... 4.61574e-01 6.80053e-01 1.53412e+00
+Step   37 : Displace = [0m4.733e-03[0m/[0m6.477e-03[0m (rms/max) Trust = 3.000e-01 (=) Grad = [0m9.154e-04[0m/[0m2.101e-03[0m (rms/max) E (change) = -8719.1104828719 ([92m-2.106e-07[0m) Quality = [0m0.134[0m
+Hessian Eigenvalues: 2.65976e-04 3.15901e-03 2.30689e-02 ... 4.55962e-01 6.79626e-01 1.52199e+00
+Step   38 : Displace = [0m2.563e-03[0m/[0m3.802e-03[0m (rms/max) Trust = 2.366e-03 ([91m-[0m) Grad = [0m8.176e-04[0m/[0m1.843e-03[0m (rms/max) E (change) = -8719.1104856118 ([0m-2.740e-06[0m) Quality = [0m0.989[0m
+Hessian Eigenvalues: 2.79027e-04 8.16686e-04 2.11845e-02 ... 4.47579e-01 6.79560e-01 1.62476e+00
+Step   39 : Displace = [0m3.360e-03[0m/[0m5.466e-03[0m (rms/max) Trust = 3.347e-03 ([92m+[0m) Grad = [0m7.761e-04[0m/[0m1.742e-03[0m (rms/max) E (change) = -8719.1104893832 ([0m-3.771e-06[0m) Quality = [0m0.893[0m
+Hessian Eigenvalues: 2.82792e-04 5.32405e-04 1.68603e-02 ... 4.46900e-01 6.94795e-01 1.65876e+00
+Step   40 : Displace = [0m4.891e-03[0m/[0m7.640e-03[0m (rms/max) Trust = 4.733e-03 ([92m+[0m) Grad = [0m7.551e-04[0m/[0m1.722e-03[0m (rms/max) E (change) = -8719.1104931360 ([0m-3.753e-06[0m) Quality = [0m0.693[0m
+Hessian Eigenvalues: 2.82922e-04 4.78036e-04 1.54928e-02 ... 4.48020e-01 7.06748e-01 1.62190e+00
+Step   41 : Displace = [0m4.802e-03[0m/[0m8.297e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m7.165e-04[0m/[0m1.632e-03[0m (rms/max) E (change) = -8719.1104959767 ([0m-2.841e-06[0m) Quality = [0m0.706[0m
+Hessian Eigenvalues: 2.69730e-04 3.12265e-04 1.20756e-02 ... 4.47410e-01 6.67995e-01 1.57375e+00
+Step   42 : Displace = [0m4.978e-03[0m/[0m8.294e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m6.833e-04[0m/[0m1.557e-03[0m (rms/max) E (change) = -8719.1104986820 ([0m-2.705e-06[0m) Quality = [0m0.700[0m
+Hessian Eigenvalues: 1.54608e-04 3.41259e-04 8.42784e-03 ... 4.46946e-01 5.03419e-01 1.66735e+00
+Step   43 : Displace = [0m4.946e-03[0m/[0m7.699e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m6.646e-04[0m/[0m1.515e-03[0m (rms/max) E (change) = -8719.1105011871 ([0m-2.505e-06[0m) Quality = [0m0.679[0m
+Hessian Eigenvalues: 1.07327e-04 3.86380e-04 6.17487e-03 ... 3.64008e-01 4.65131e-01 1.81048e+00
+Step   44 : Displace = [0m5.023e-03[0m/[0m8.173e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m6.294e-04[0m/[0m1.440e-03[0m (rms/max) E (change) = -8719.1105035037 ([0m-2.317e-06[0m) Quality = [0m0.626[0m
+Hessian Eigenvalues: 8.90971e-05 4.21694e-04 5.71848e-03 ... 3.52816e-01 4.67069e-01 1.75959e+00
+Step   45 : Displace = [0m4.747e-03[0m/[0m7.696e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m5.691e-04[0m/[0m1.306e-03[0m (rms/max) E (change) = -8719.1105055035 ([0m-2.000e-06[0m) Quality = [0m0.569[0m
+Hessian Eigenvalues: 6.54583e-05 4.66466e-04 5.68658e-03 ... 3.55081e-01 4.59648e-01 1.61846e+00
+Step   46 : Displace = [0m4.538e-03[0m/[0m7.206e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m5.144e-04[0m/[0m1.181e-03[0m (rms/max) E (change) = -8719.1105073890 ([0m-1.885e-06[0m) Quality = [0m0.553[0m
+Hessian Eigenvalues: 4.28883e-05 5.36902e-04 5.44186e-03 ... 3.66657e-01 4.43545e-01 1.54322e+00
+Step   47 : Displace = [0m4.304e-03[0m/[0m6.656e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m4.758e-04[0m/[0m1.089e-03[0m (rms/max) E (change) = -8719.1105092039 ([0m-1.815e-06[0m) Quality = [0m0.562[0m
+Hessian Eigenvalues: 2.10302e-05 6.81053e-04 4.80067e-03 ... 3.60605e-01 4.48550e-01 1.59926e+00
+Step   48 : Displace = [0m4.741e-03[0m/[0m7.280e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m4.417e-04[0m/[0m1.004e-03[0m (rms/max) E (change) = -8719.1105112239 ([0m-2.020e-06[0m) Quality = [0m0.571[0m
+Eigenvalues below 1.0000e-05 (4.0911e-06) - returning guess
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 5.00000e-02 ... 3.42820e-01 4.27936e-01 1.65834e+00
+Step   49 : Displace = [0m1.974e-03[0m/[0m3.356e-03[0m (rms/max) Trust = 4.733e-03 (=) Grad = [0m4.297e-04[0m/[0m9.744e-04[0m (rms/max) E (change) = -8719.1105121595 ([92m-9.356e-07[0m) Quality = [0m1.729[0m
+Hessian Eigenvalues: 8.11835e-04 2.30137e-02 4.20736e-02 ... 3.46471e-01 4.33046e-01 1.69006e+00
+Step   50 : Displace = [0m6.613e-03[0m/[0m1.125e-02[0m (rms/max) Trust = 6.693e-03 ([92m+[0m) Grad = [0m3.934e-04[0m/[0m8.929e-04[0m (rms/max) E (change) = -8719.1105150853 ([0m-2.926e-06[0m) Quality = [0m0.839[0m
+Hessian Eigenvalues: 4.92458e-04 2.30322e-02 3.58307e-02 ... 3.47876e-01 4.40737e-01 1.70210e+00
+Step   51 : Displace = [0m9.265e-03[0m/[0m1.552e-02[0m (rms/max) Trust = 9.465e-03 ([92m+[0m) Grad = [0m3.453e-04[0m/[0m7.735e-04[0m (rms/max) E (change) = -8719.1105188939 ([0m-3.809e-06[0m) Quality = [0m0.781[0m
+Hessian Eigenvalues: 2.44268e-04 2.30615e-02 3.23993e-02 ... 3.49510e-01 4.43731e-01 1.69749e+00
+Step   52 : Displace = [0m1.315e-02[0m/[0m2.146e-02[0m (rms/max) Trust = 1.339e-02 ([92m+[0m) Grad = [92m2.709e-04[0m/[0m6.043e-04[0m (rms/max) E (change) = -8719.1105241642 ([0m-5.270e-06[0m) Quality = [0m0.743[0m
+Hessian Eigenvalues: 1.16388e-04 2.31492e-02 2.93126e-02 ... 3.45280e-01 4.35264e-01 1.68931e+00
+Step   53 : Displace = [0m1.319e-02[0m/[0m2.060e-02[0m (rms/max) Trust = 1.339e-02 (=) Grad = [92m1.984e-04[0m/[92m4.331e-04[0m (rms/max) E (change) = -8719.1105294921 ([0m-5.328e-06[0m) Quality = [0m0.698[0m
+Hessian Eigenvalues: 4.53848e-05 1.97867e-02 2.40017e-02 ... 3.46385e-01 4.31107e-01 1.68379e+00
+Step   54 : Displace = [0m1.398e-02[0m/[0m2.233e-02[0m (rms/max) Trust = 1.339e-02 (=) Grad = [92m1.326e-04[0m/[92m3.106e-04[0m (rms/max) E (change) = -8719.1105350418 ([0m-5.550e-06[0m) Quality = [0m0.612[0m
+Hessian Eigenvalues: 2.75276e-05 1.19796e-02 2.43194e-02 ... 3.70322e-01 4.57067e-01 1.70359e+00
+Step   55 : Displace = [0m1.252e-02[0m/[0m2.031e-02[0m (rms/max) Trust = 1.339e-02 (=) Grad = [92m1.414e-04[0m/[92m3.339e-04[0m (rms/max) E (change) = -8719.1105398530 ([0m-4.811e-06[0m) Quality = [0m0.576[0m
+Hessian Eigenvalues: 1.31733e-05 7.42763e-03 2.48436e-02 ... 3.80259e-01 5.02811e-01 1.71857e+00
+Step   56 : Displace = [0m1.208e-02[0m/[0m1.978e-02[0m (rms/max) Trust = 1.339e-02 (=) Grad = [92m1.748e-04[0m/[92m3.933e-04[0m (rms/max) E (change) = -8719.1105447204 ([0m-4.867e-06[0m) Quality = [0m0.576[0m
+Eigenvalues below 1.0000e-05 (1.4421e-06) - returning guess
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 5.00000e-02 ... 3.42883e-01 4.27891e-01 1.65897e+00
+Step   57 : Displace = [0m2.834e-03[0m/[0m4.456e-03[0m (rms/max) Trust = 1.339e-02 (=) Grad = [92m1.190e-04[0m/[92m2.470e-04[0m (rms/max) E (change) = -8719.1105467553 ([0m-2.035e-06[0m) Quality = [0m2.046[0m
+Hessian Eigenvalues: 4.79616e-03 2.30014e-02 4.08734e-02 ... 3.44413e-01 4.31566e-01 1.68498e+00
+Step   58 : Displace = [0m1.662e-02[0m/[0m2.771e-02[0m (rms/max) Trust = 1.893e-02 ([92m+[0m) Grad = [92m2.809e-04[0m/[0m5.382e-04[0m (rms/max) E (change) = -8719.1105548425 ([0m-8.087e-06[0m) Quality = [0m1.539[0m
+Hessian Eigenvalues: 2.06150e-03 2.30032e-02 4.06940e-02 ... 3.50915e-01 4.49593e-01 1.70048e+00
+Step   59 : Displace = [0m2.002e-02[0m/[0m3.345e-02[0m (rms/max) Trust = 2.677e-02 ([92m+[0m) Grad = [0m4.889e-04[0m/[0m8.968e-04[0m (rms/max) E (change) = -8719.1105628969 ([0m-8.054e-06[0m) Quality = [0m1.746[0m
+Hessian Eigenvalues: 4.12420e-04 2.30074e-02 4.07744e-02 ... 3.64734e-01 4.76425e-01 1.70256e+00
+Step   60 : Displace = [0m3.731e-02[0m/[0m6.086e-02[0m (rms/max) Trust = 3.786e-02 ([92m+[0m) Grad = [0m6.816e-04[0m/[0m1.219e-03[0m (rms/max) E (change) = -8719.1105810585 ([0m-1.816e-05[0m) Quality = [0m1.160[0m
+Eigenvalues below 1.0000e-05 (-6.6367e-01) - returning guess
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 5.00000e-02 ... 3.42230e-01 4.29493e-01 1.65765e+00
+Step   61 : Displace = [0m9.802e-03[0m/[0m1.682e-02[0m (rms/max) Trust = 5.354e-02 ([92m+[0m) Grad = [0m4.137e-04[0m/[0m7.350e-04[0m (rms/max) E (change) = -8719.1105933167 ([0m-1.226e-05[0m) Quality = [0m1.259[0m
+Hessian Eigenvalues: 1.70824e-02 2.30000e-02 4.51823e-02 ... 3.41821e-01 4.28049e-01 1.66694e+00
+Step   62 : Displace = [0m1.366e-02[0m/[0m2.200e-02[0m (rms/max) Trust = 7.572e-02 ([92m+[0m) Grad = [0m4.131e-04[0m/[0m8.617e-04[0m (rms/max) E (change) = -8719.1105992127 ([0m-5.896e-06[0m) Quality = [0m0.716[0m
+Hessian Eigenvalues: 1.05423e-02 2.30001e-02 4.40796e-02 ... 3.42234e-01 4.32809e-01 1.67029e+00
+Step   63 : Displace = [0m6.400e-03[0m/[0m1.032e-02[0m (rms/max) Trust = 7.572e-02 (=) Grad = [0m3.999e-04[0m/[0m8.919e-04[0m (rms/max) E (change) = -8719.1106019814 ([0m-2.769e-06[0m) Quality = [0m1.137[0m
+Hessian Eigenvalues: 1.99815e-03 2.30003e-02 4.39432e-02 ... 3.90854e-01 4.40755e-01 1.66577e+00
+Step   64 : Displace = [0m3.649e-02[0m/[0m5.953e-02[0m (rms/max) Trust = 1.071e-01 ([92m+[0m) Grad = [0m6.786e-04[0m/[0m1.178e-03[0m (rms/max) E (change) = -8719.1106184415 ([0m-1.646e-05[0m) Quality = [0m1.223[0m
+Hessian Eigenvalues: 5.16833e-04 2.30012e-02 4.42713e-02 ... 4.11809e-01 4.74378e-01 1.66877e+00
+Step   65 : Displace = [0m1.236e-01[0m/[0m2.011e-01[0m (rms/max) Trust = 1.514e-01 ([92m+[0m) Grad = [0m1.609e-03[0m/[0m2.945e-03[0m (rms/max) E (change) = -8719.1106679050 ([0m-4.946e-05[0m) Quality = [0m1.177[0m
+Hessian Eigenvalues: 3.77726e-04 2.30013e-02 4.43341e-02 ... 4.18088e-01 5.03268e-01 1.67072e+00

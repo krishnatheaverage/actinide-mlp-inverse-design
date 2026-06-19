@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+miniforge3/
+results/mlp/ckpt/
+results/mlp/logs/
+results/mlp/mace_results/
+*.model
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg

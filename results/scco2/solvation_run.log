@@ -1,0 +1,78 @@
+platform: OpenCL
+  [CH4-UA T=320.0 P=150.0] window 1/13 lambda=1.00 done (66s)
+  [CH4-UA T=320.0 P=150.0] window 2/13 lambda=0.95 done (131s)
+  [CH4-UA T=320.0 P=150.0] window 3/13 lambda=0.90 done (196s)
+  [CH4-UA T=320.0 P=150.0] window 4/13 lambda=0.80 done (264s)
+  [CH4-UA T=320.0 P=150.0] window 5/13 lambda=0.70 done (329s)
+  [CH4-UA T=320.0 P=150.0] window 6/13 lambda=0.60 done (396s)
+  [CH4-UA T=320.0 P=150.0] window 7/13 lambda=0.50 done (466s)
+  [CH4-UA T=320.0 P=150.0] window 8/13 lambda=0.40 done (535s)
+  [CH4-UA T=320.0 P=150.0] window 9/13 lambda=0.30 done (603s)
+  [CH4-UA T=320.0 P=150.0] window 10/13 lambda=0.20 done (674s)
+  [CH4-UA T=320.0 P=150.0] window 11/13 lambda=0.12 done (752s)
+  [CH4-UA T=320.0 P=150.0] window 12/13 lambda=0.06 done (835s)
+  [CH4-UA T=320.0 P=150.0] window 13/13 lambda=0.00 done (911s)
+Warning on use of the timeseries module: If the inherent timescales of the system are long compared to those being analyzed, this statistical inefficiency may be an underestimate.  The estimate presumes the use of many statistically independent samples.  Tests should be performed to assess whether this condition is satisfied.   Be cautious in the interpretation of the data.
+
+****** PyMBAR will use 64-bit JAX! *******
+* JAX is currently set to 32-bit bitsize *
+* which is its default.                  *
+*                                        *
+* PyMBAR requires 64-bit mode and WILL   *
+* enable JAX's 64-bit mode when called.  *
+*                                        *
+* This MAY cause problems with other     *
+* Uses of JAX in the same code.          *
+******************************************
+
+
+******* JAX 64-bit mode is now on! *******
+*     JAX is now set to 64-bit mode!     *
+*   This MAY cause problems with other   *
+*      uses of JAX in the same code.     *
+******************************************
+
+==> CH4-UA T=320.0K P=150.0bar rho=0.727: dG_solv = -0.84 +/- 0.23 kJ/mol  min adj-overlap=0.110
+  [Xe-like T=320.0 P=150.0] window 1/13 lambda=1.00 done (79s)
+  [Xe-like T=320.0 P=150.0] window 2/13 lambda=0.95 done (160s)
+  [Xe-like T=320.0 P=150.0] window 3/13 lambda=0.90 done (236s)
+  [Xe-like T=320.0 P=150.0] window 4/13 lambda=0.80 done (308s)
+  [Xe-like T=320.0 P=150.0] window 5/13 lambda=0.70 done (381s)
+  [Xe-like T=320.0 P=150.0] window 6/13 lambda=0.60 done (450s)
+  [Xe-like T=320.0 P=150.0] window 7/13 lambda=0.50 done (518s)
+  [Xe-like T=320.0 P=150.0] window 8/13 lambda=0.40 done (589s)
+  [Xe-like T=320.0 P=150.0] window 9/13 lambda=0.30 done (662s)
+  [Xe-like T=320.0 P=150.0] window 10/13 lambda=0.20 done (735s)
+  [Xe-like T=320.0 P=150.0] window 11/13 lambda=0.12 done (813s)
+  [Xe-like T=320.0 P=150.0] window 12/13 lambda=0.06 done (891s)
+  [Xe-like T=320.0 P=150.0] window 13/13 lambda=0.00 done (966s)
+==> Xe-like T=320.0K P=150.0bar rho=0.727: dG_solv = -3.86 +/- 0.24 kJ/mol  min adj-overlap=0.110
+  [CH4-UA T=320.0 P=100.0] window 1/13 lambda=1.00 done (73s)
+  [CH4-UA T=320.0 P=100.0] window 2/13 lambda=0.95 done (148s)
+  [CH4-UA T=320.0 P=100.0] window 3/13 lambda=0.90 done (224s)
+  [CH4-UA T=320.0 P=100.0] window 4/13 lambda=0.80 done (299s)
+  [CH4-UA T=320.0 P=100.0] window 5/13 lambda=0.70 done (372s)
+  [CH4-UA T=320.0 P=100.0] window 6/13 lambda=0.60 done (448s)
+  [CH4-UA T=320.0 P=100.0] window 7/13 lambda=0.50 done (523s)
+  [CH4-UA T=320.0 P=100.0] window 8/13 lambda=0.40 done (598s)
+  [CH4-UA T=320.0 P=100.0] window 9/13 lambda=0.30 done (677s)
+  [CH4-UA T=320.0 P=100.0] window 10/13 lambda=0.20 done (753s)
+  [CH4-UA T=320.0 P=100.0] window 11/13 lambda=0.12 done (831s)
+  [CH4-UA T=320.0 P=100.0] window 12/13 lambda=0.06 done (908s)
+  [CH4-UA T=320.0 P=100.0] window 13/13 lambda=0.00 done (982s)
+==> CH4-UA T=320.0K P=100.0bar rho=0.448: dG_solv = -1.03 +/- 0.21 kJ/mol  min adj-overlap=0.106
+  [CH4-UA T=320.0 P=200.0] window 1/13 lambda=1.00 done (75s)
+  [CH4-UA T=320.0 P=200.0] window 2/13 lambda=0.95 done (148s)
+  [CH4-UA T=320.0 P=200.0] window 3/13 lambda=0.90 done (224s)
+  [CH4-UA T=320.0 P=200.0] window 4/13 lambda=0.80 done (298s)
+  [CH4-UA T=320.0 P=200.0] window 5/13 lambda=0.70 done (373s)
+  [CH4-UA T=320.0 P=200.0] window 6/13 lambda=0.60 done (446s)
+  [CH4-UA T=320.0 P=200.0] window 7/13 lambda=0.50 done (518s)
+  [CH4-UA T=320.0 P=200.0] window 8/13 lambda=0.40 done (593s)
+  [CH4-UA T=320.0 P=200.0] window 9/13 lambda=0.30 done (666s)
+  [CH4-UA T=320.0 P=200.0] window 10/13 lambda=0.20 done (742s)
+  [CH4-UA T=320.0 P=200.0] window 11/13 lambda=0.12 done (815s)
+  [CH4-UA T=320.0 P=200.0] window 12/13 lambda=0.06 done (890s)
+  [CH4-UA T=320.0 P=200.0] window 13/13 lambda=0.00 done (964s)
+==> CH4-UA T=320.0K P=200.0bar rho=0.802: dG_solv = -0.79 +/- 0.23 kJ/mol  min adj-overlap=0.111
+SOLVATION_DONE

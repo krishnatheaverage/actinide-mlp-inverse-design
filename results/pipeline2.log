@@ -1,0 +1,3 @@
+[pipe2 02:12:22] MACE full training+eval (CPU float64, 250 epochs)
+[pipe2 09:27:52] MACE done (rc=0)
+[pipe2 09:27:52] V_min surrogate oracle (~246 ligands)

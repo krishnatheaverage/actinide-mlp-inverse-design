@@ -1,0 +1,23 @@
+
+========================================================================
+PySCF / environment
+========================================================================
+pyscf 2.13.1
+basis_set_exchange 0.12
+
+========================================================================
+Basis availability for U (uranium, Z=92)
+========================================================================
+x2c-SVPall         internal=fail-internal  bse=fail-bse
+x2c-TZVPall        internal=fail-internal  bse=fail-bse
+ANO-RCC-VDZP       internal=internal       bse=bse-ok
+ANO-RCC-VTZP       internal=internal       bse=bse-ok
+SARC-DKH2          internal=internal       bse=bse-ok
+sarc2-dkh-qzvp     internal=fail-internal  bse=fail-bse
+jorge-DZP          internal=internal       bse=bse-ok
+dyall-vdz          internal=fail-internal  bse=fail-bse
+USABLE: ['ANO-RCC-VDZP', 'ANO-RCC-VTZP', 'SARC-DKH2', 'jorge-DZP']
+
+========================================================================
+Timing test: scalar-X2C PBE0 on UO2^2+ (+waters)
+========================================================================

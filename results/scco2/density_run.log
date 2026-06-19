@@ -1,0 +1,8 @@
+platforms: ['Reference', 'CPU', 'OpenCL'] -> using OpenCL
+T=320K P=80bar  rho_MD=0.5201+/-0.1840  rho_EOS=0.2319 g/cc  err=+124.3%  (131s)
+T=320K P=100bar  rho_MD=0.7750+/-0.0296  rho_EOS=0.4483 g/cc  err=+72.9%  (161s)
+T=320K P=150bar  rho_MD=0.8377+/-0.0309  rho_EOS=0.7268 g/cc  err=+15.3%  (160s)
+T=320K P=200bar  rho_MD=0.8811+/-0.0242  rho_EOS=0.8023 g/cc  err=+9.8%  (155s)
+T=320K P=300bar  rho_MD=0.9308+/-0.0221  rho_EOS=0.8830 g/cc  err=+5.4%  (164s)
+T=310K P=75bar  rho_MD=0.8081+/-0.0334  rho_EOS=0.2534 g/cc  err=+219.0%  (161s)
+DENSITY_DONE

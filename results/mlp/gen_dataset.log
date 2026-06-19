@@ -1,0 +1,212 @@
+[1] optimise UO2(H2O)4^2+ (NWORK=4)
+geometric-optimize called with the following command line:
+src/02_mlp/gen_dataset.py
+
+                                        [91m())))))))))))))))/[0m                     
+                                    [91m())))))))))))))))))))))))),[0m                
+                                [91m*)))))))))))))))))))))))))))))))))[0m             
+                        [94m#,[0m    [91m()))))))))/[0m                [91m.)))))))))),[0m          
+                      [94m#%%%%,[0m  [91m())))))[0m                        [91m.))))))))*[0m        
+                      [94m*%%%%%%,[0m  [91m))[0m              [93m..[0m              [91m,))))))).[0m      
+                        [94m*%%%%%%,[0m         [93m***************/.[0m        [91m.)))))))[0m     
+                [94m#%%/[0m      [94m(%%%%%%,[0m    [93m/*********************.[0m       [91m)))))))[0m    
+              [94m.%%%%%%#[0m      [94m*%%%%%%,[0m  [93m*******/,[0m     [93m**********,[0m      [91m.))))))[0m   
+                [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [93m**[0m              [93m********[0m      [91m.))))))[0m  
+          [94m##[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m                  [93m,******[0m      [91m/)))))[0m  
+        [94m%%%%%%[0m      [94m.%%%%%%#[0m      [94m*%%%%%%,[0m    [92m,/////.[0m       [93m******[0m      [91m))))))[0m 
+      [94m#%[0m      [94m%%[0m      [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [92m////////,[0m      [93m*****/[0m     [91m,)))))[0m 
+    [94m#%%[0m  [94m%%%[0m  [94m%%%#[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m  [92m///////.[0m     [93m/*****[0m      [91m))))).[0m
+  [94m#%%%%.[0m      [94m%%%%%#[0m      [94m/%%%%%%*[0m      [94m#%%%%%%[0m   [92m/////)[0m     [93m******[0m      [91m))))),[0m
+    [94m#%%%%##%[0m  [94m%%%#[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m  [92m///////.[0m     [93m/*****[0m      [91m))))).[0m
+      [94m##[0m     [94m%%%[0m      [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [92m////////.[0m      [93m*****/[0m     [91m,)))))[0m 
+        [94m#%%%%#[0m      [94m/%%%%%%/[0m      [94m(%%%%%%[0m      [92m/)/)//[0m       [93m******[0m      [91m))))))[0m 
+          [94m##[0m      [94m.%%%%%%/[0m      [94m(%%%%%%,[0m                  [93m*******[0m      [91m))))))[0m  
+                [94m.%%%%%%/[0m      [94m*%%%%%%,[0m  [93m**.[0m             [93m/*******[0m      [91m.))))))[0m  
+              [94m*%%%%%%/[0m      [94m(%%%%%%[0m   [93m********/*..,*/*********[0m       [91m*))))))[0m   
+                [94m#%%/[0m      [94m(%%%%%%,[0m    [93m*********************/[0m        [91m)))))))[0m    
+                        [94m*%%%%%%,[0m         [93m,**************/[0m         [91m,))))))/[0m     
+                      [94m(%%%%%%[0m   [91m()[0m                              [91m))))))))[0m       
+                      [94m#%%%%,[0m  [91m())))))[0m                        [91m,)))))))),[0m        
+                        [94m#,[0m    [91m())))))))))[0m                [91m,)))))))))).[0m          
+                                 [91m()))))))))))))))))))))))))))))))/[0m             
+                                    [91m())))))))))))))))))))))))).[0m                
+                                         [91m())))))))))))))),[0m                     
+
+-=# [1;94m geomeTRIC started. Version: 1.1.1 [0m #=-
+Current date and time: 2026-06-17 18:12:33
+#========================================================#
+#| [92m    Arguments passed to driver run_optimizer():     [0m |#
+#========================================================#
+customengine              <pyscf.geomopt.geometric_solver.PySCFEngine object at 0x11667cbd0> 
+input                     /var/folders/1g/6jgk0wys4_95_k01fb2f6jq40000gn/T/tmp53_upah4/e9f4f367-538c-4176-9817-353c2a04d6c2 
+logIni                    /Users/krishnaharish/miniforge3/envs/actinide/lib/python3.11/site-packages/pyscf/geomopt/log.ini 
+maxiter                   100 
+----------------------------------------------------------
+Custom engine selected.
+Bonds will be generated from interatomic distances less than 1.20 times sum of covalent radii
+45 internal coordinates being used (instead of 45 Cartesians)
+Internal coordinate system (atoms numbered from 1):
+Distance 1-2
+Distance 1-3
+Distance 1-4
+Distance 1-7
+Distance 1-10
+Distance 1-13
+Distance 4-5
+Distance 4-6
+Distance 7-8
+Distance 7-9
+Distance 10-11
+Distance 10-12
+Distance 13-14
+Distance 13-15
+Angle 3-1-10
+Angle 3-1-13
+Angle 10-1-13
+Angle 1-4-6
+Angle 5-4-6
+Angle 1-7-9
+Angle 8-7-9
+Angle 1-10-12
+Angle 11-10-12
+Angle 1-13-15
+Angle 14-13-15
+LinearAngleX 2-1-3
+LinearAngleY 2-1-3
+LinearAngleX 4-1-10
+LinearAngleY 4-1-10
+LinearAngleX 7-1-13
+LinearAngleY 7-1-13
+Out-of-Plane 1-2-4-3
+Out-of-Plane 1-2-7-3
+Out-of-Plane 1-2-10-3
+Out-of-Plane 1-2-13-3
+Out-of-Plane 1-2-4-10
+Out-of-Plane 1-2-7-13
+Out-of-Plane 1-3-4-10
+Out-of-Plane 1-3-7-13
+Out-of-Plane 1-4-7-10
+Out-of-Plane 1-4-7-13
+Out-of-Plane 1-4-13-10
+Out-of-Plane 1-7-10-13
+Out-of-Plane 4-5-1-6
+Out-of-Plane 7-8-1-9
+Out-of-Plane 10-11-1-12
+Out-of-Plane 13-14-1-15
+Dihedral 2-1-10-11
+Dihedral 2-1-10-12
+Dihedral 3-1-10-11
+Dihedral 3-1-10-12
+Dihedral 7-1-10-11
+Dihedral 7-1-10-12
+Dihedral 13-1-10-11
+Dihedral 13-1-10-12
+Dihedral 5-4-10-11
+Dihedral 5-4-10-12
+Dihedral 6-4-10-11
+Dihedral 6-4-10-12
+Dihedral 2-1-4-5
+Dihedral 2-1-4-6
+Dihedral 3-1-4-5
+Dihedral 3-1-4-6
+Dihedral 7-1-4-5
+Dihedral 7-1-4-6
+Dihedral 13-1-4-5
+Dihedral 13-1-4-6
+Dihedral 2-1-13-14
+Dihedral 2-1-13-15
+Dihedral 3-1-13-14
+Dihedral 3-1-13-15
+Dihedral 4-1-13-14
+Dihedral 4-1-13-15
+Dihedral 10-1-13-14
+Dihedral 10-1-13-15
+Dihedral 8-7-13-14
+Dihedral 8-7-13-15
+Dihedral 9-7-13-14
+Dihedral 9-7-13-15
+Dihedral 2-1-7-8
+Dihedral 2-1-7-9
+Dihedral 3-1-7-8
+Dihedral 3-1-7-9
+Dihedral 4-1-7-8
+Dihedral 4-1-7-9
+Dihedral 10-1-7-8
+Dihedral 10-1-7-9
+Translation-X 1-15
+Translation-Y 1-15
+Translation-Z 1-15
+Rotation-A 1-15
+Rotation-B 1-15
+Rotation-C 1-15
+<class 'geometric.internal.Distance'> : 14
+<class 'geometric.internal.Angle'> : 11
+<class 'geometric.internal.LinearAngle'> : 6
+<class 'geometric.internal.OutOfPlane'> : 16
+<class 'geometric.internal.Dihedral'> : 40
+<class 'geometric.internal.TranslationX'> : 1
+<class 'geometric.internal.TranslationY'> : 1
+<class 'geometric.internal.TranslationZ'> : 1
+<class 'geometric.internal.RotationA'> : 1
+<class 'geometric.internal.RotationB'> : 1
+<class 'geometric.internal.RotationC'> : 1
+> ===== Optimization Info: ====
+> Job type: Energy minimization
+> Maximum number of optimization cycles: 100
+> Initial / maximum trust radius (Angstrom): 0.100 / 0.300
+> Convergence Criteria:
+> Will converge when all 5 criteria are reached:
+>  |Delta-E| < 1.00e-06
+>  RMS-Grad  < 3.00e-04
+>  Max-Grad  < 4.50e-04
+>  RMS-Disp  < 1.20e-03
+>  Max-Disp  < 1.80e-03
+> === End Optimization Info ===
+Step    0 : Gradient = 5.294e-01/6.462e-01 (rms/max) Energy = -28455.3654546334
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54163e+00
+Step    1 : Displace = [0m9.691e-02[0m/[0m1.345e-01[0m (rms/max) Trust = 1.000e-01 (=) Grad = [0m1.394e-01[0m/[0m1.719e-01[0m (rms/max) E (change) = -28456.0180471466 ([0m-6.526e-01[0m) Quality = [0m0.878[0m
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.65873e+00
+Step    2 : Displace = [0m3.372e-02[0m/[0m4.129e-02[0m (rms/max) Trust = 1.414e-01 ([92m+[0m) Grad = [0m6.379e-02[0m/[0m7.720e-02[0m (rms/max) E (change) = -28456.0933953557 ([0m-7.535e-02[0m) Quality = [0m1.419[0m
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54163e+00
+Step    3 : Displace = [0m4.813e-02[0m/[0m6.566e-02[0m (rms/max) Trust = 2.000e-01 ([92m+[0m) Grad = [0m1.810e-02[0m/[0m2.786e-02[0m (rms/max) E (change) = -28456.1179401790 ([0m-2.454e-02[0m) Quality = [0m1.091[0m
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54163e+00
+Step    4 : Displace = [0m2.957e-02[0m/[0m4.441e-02[0m (rms/max) Trust = 2.828e-01 ([92m+[0m) Grad = [0m8.139e-03[0m/[0m2.331e-02[0m (rms/max) E (change) = -28456.1202013944 ([0m-2.261e-03[0m) Quality = [0m0.535[0m
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54163e+00
+Step    5 : Displace = [0m1.133e-02[0m/[0m2.018e-02[0m (rms/max) Trust = 2.828e-01 (=) Grad = [0m5.393e-04[0m/[0m1.177e-03[0m (rms/max) E (change) = -28456.1210400068 ([0m-8.386e-04[0m) Quality = [0m0.939[0m
+Hessian Eigenvalues: 2.30000e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54163e+00
+Step    6 : Displace = [0m2.141e-03[0m/[0m3.440e-03[0m (rms/max) Trust = 3.000e-01 ([92m+[0m) Grad = [92m1.783e-04[0m/[92m2.920e-04[0m (rms/max) E (change) = -28456.1210456973 ([0m-5.690e-06[0m) Quality = [0m1.016[0m
+Hessian Eigenvalues: 2.29992e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54164e+00
+Step    7 : Displace = [92m8.595e-04[0m/[92m1.305e-03[0m (rms/max) Trust = 3.000e-01 (=) Grad = [92m1.123e-04[0m/[92m2.764e-04[0m (rms/max) E (change) = -28456.1210470174 ([0m-1.320e-06[0m) Quality = [0m1.366[0m
+Hessian Eigenvalues: 2.29962e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54164e+00
+Step    8 : Displace = [92m7.853e-04[0m/[92m1.027e-03[0m (rms/max) Trust = 3.000e-01 (=) Grad = [92m8.967e-05[0m/[92m2.651e-04[0m (rms/max) E (change) = -28456.1210473840 ([92m-3.666e-07[0m) Quality = [0m0.970[0m
+Hessian Eigenvalues: 2.29962e-02 2.30000e-02 2.30000e-02 ... 1.54163e+00 1.54163e+00 1.54164e+00
+Converged! =D
+
+    #==========================================================================#
+    #| If this code has benefited your research, please support us by citing: |#
+    #|                                                                        |#
+    #| Wang, L.-P.; Song, C.C. (2016) "Geometry optimization made simple with |#
+    #| translation and rotation coordinates", J. Chem, Phys. 144, 214108.     |#
+    #| http://dx.doi.org/10.1063/1.4952956                                    |#
+    #==========================================================================#
+    Time elapsed since start of run_optimizer: 738.823 seconds
+    optimised (739s)
+[2] parallel numerical Hessian + normal modes
+    top freqs (cm^-1): [np.float64(3823.4), np.float64(3821.2), np.float64(3821.2), np.float64(3820.1), np.float64(3755.3), np.float64(3744.9)] (5055s)
+[3] build configurations
+    303 configs to label
+[4] parallel X2C-PBE0(DF) labelling
+    labelled 1/303 (5871s)
+    labelled 26/303 (6638s)
+    labelled 51/303 (7620s)
+    labelled 76/303 (8550s)
+    labelled 101/303 (9700s)
+    labelled 126/303 (10566s)
+    labelled 151/303 (11670s)
+    labelled 176/303 (13070s)
+    labelled 201/303 (14624s)
+    labelled 226/303 (17266s)
+    labelled 251/303 (18929s)
+    labelled 276/303 (20878s)
+    labelled 301/303 (23773s)
+DATASET_DONE: 303 frames in 397.4 min

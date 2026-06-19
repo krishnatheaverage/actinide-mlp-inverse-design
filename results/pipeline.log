@@ -1,0 +1,4 @@
+[pipeline 20:42:03] waiting for MLP dataset (DATASET_DONE)...
+[pipeline 00:50:20] dataset stage finished (303 frames)
+[pipeline 00:50:20] launching V_min oracle (CPU) + MACE training (GPU)
+[pipeline 00:50:20] MACE training+eval finished (rc=1)

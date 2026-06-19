@@ -1,0 +1,6 @@
+
+[A] Relativistic effect on uranyl U=O bond
+  x2c: r(U=O)_min = 1.6850 A
+  nonrel: r(U=O)_min = 1.6340 A
+  relativistic bond contraction = -5.11 pm
+SAVED relativistic_effect.json

@@ -1,0 +1,6 @@
+
+##### heavy basis = SARC-DKH2 (light=def2-TZVP) #####
+--- bare uranyl ---
+[UO2^2+ x2c] nao=221 conv=True E=-28150.566694 x2c=True df=False t_scf=11.2s grad=analytic t_grad=50.2 gmax=0.1006867321300291
+--- bare uranyl + DF ---
+[UO2^2+ x2c+DF] nao=221 conv=True E=-28150.572899 x2c=True df=True t_scf=3.3s grad=analytic t_grad=3.3 gmax=0.10049501724004983

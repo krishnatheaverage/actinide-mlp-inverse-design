@@ -1,0 +1,27 @@
+wrote paper/results_macros.tex
+  \ruoX = 1.685
+  \ruoNR = 1.634
+  \dcontraction = 5.1
+  \naoUranyl = 221
+  \tgradDF = 3.3
+  \tgradNoDF = 50
+  \mlpNframes = 303
+  \mlpEtest = 2.40
+  \mlpFtest = 36
+  \mlpEood = 45.46
+  \mlpFood = 1287
+  \mlpEleak = U 59 vs H 29~meV/\AA
+  \uostretch = 3823~cm$^{-1}$
+  \scErr = +5\% at 30~MPa to +219\% near $P_c$
+  \dGch = \SI{-0.8 \pm 0.2}{kJ/mol}
+  \minoverlap = 0.11
+  \surrR = -0.12
+  \genNovelty = 99\%
+  \genUniq = 100\%
+  \ddEsel = \SI{nan \pm nan}{kJ/mol}
+  \dconPM = -5.1
+  \dconConPM = -5.1
+  \Tone = 0.031
+  \saMed = 3.5
+  \saMin = 2.5
+  \saMax = 4.1
