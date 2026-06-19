@@ -1,8 +1,3 @@
-"""
-Focused timing benchmark: scalar-X2C PBE0 / SARC-DKH2 on uranyl systems.
-Decides the feasible dataset scale (per-gradient wall-clock) and confirms
-analytic X2C gradients + the relativistic bond effect.
-"""
 import time, traceback, os, sys, numpy as np
 from pyscf import gto, dft
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "common"))

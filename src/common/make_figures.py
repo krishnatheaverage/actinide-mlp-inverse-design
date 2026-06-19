@@ -1,5 +1,3 @@
-"""Generate publication figures from whatever result JSONs exist. Robust to
-missing stages. Saves PDFs+PNGs to figures/."""
 import os, json
 import numpy as np
 import matplotlib
@@ -19,13 +17,12 @@ def save(fig, name):
 def jload(p):
     return json.load(open(p)) if os.path.exists(p) else None
 
-# --- Fig 1: relativistic effect on uranyl ---
 d = jload(f"{R}/dft/relativistic_effect.json")
 if d:
     fig, ax = plt.subplots(figsize=(4.2, 3.2))
     for tag, c in (("x2c", "C3"), ("nonrel", "C0")):
         rs = np.array(d[tag]["rs"]); es = np.array(d[tag]["es"])
-        es = (es - es.min())*2625.5  # kJ/mol relative
+        es = (es - es.min())*2625.5
         lab = f"X2C scalar-rel.\n($r_{{min}}$={d['x2c']['r_min']:.3f} Å)" if tag=="x2c" \
               else f"non-relativistic\n($r_{{min}}$={d['nonrel']['r_min']:.3f} Å)"
         ax.plot(rs, es, "o-", ms=3, color=c, label=lab)
@@ -34,7 +31,6 @@ if d:
     ax.legend(fontsize=7)
     save(fig, "fig1_relativistic_effect")
 
-# --- Fig 2: scCO2 density vs EOS ---
 d = jload(f"{R}/scco2/density_validation.json")
 if d:
     d320 = [x for x in d if x["T_K"] == 320]
@@ -47,7 +43,6 @@ if d:
     ax.set_title("scCO$_2$ density, T = 320 K"); ax.legend(fontsize=8)
     save(fig, "fig2_scco2_density")
 
-# --- Fig 3: MLP parity (energy + force) ---
 d = jload(f"{R}/mlp/mlp_eval.json")
 if d and "parity" in d:
     fig, axs = plt.subplots(1, 2, figsize=(7.5, 3.4))
@@ -63,7 +58,6 @@ if d and "parity" in d:
     fig.suptitle("MACE vs X2C-DFT (split-by-source test + OOD scan)")
     save(fig, "fig3_mlp_parity")
 
-# --- Fig 4: solvation FE vs density + overlap ---
 d = jload(f"{R}/scco2/solvation_fe.json")
 if d:
     ch4 = [x for x in d if x["solute"] == "CH4-UA"]
@@ -74,7 +68,6 @@ if d:
     ax.set_title("CH$_4$ solvation free energy vs scCO$_2$ density")
     save(fig, "fig4_solvation_fe")
 
-# --- Fig 5: generative ---
 d = jload(f"{R}/generative/generative_results.json")
 if d:
     fig, axs = plt.subplots(1, 2, figsize=(7.8, 3.3))
@@ -85,7 +78,7 @@ if d:
                         color=c, label=tag.replace("history_", ""))
     axs[0].set_xlabel("GA generation"); axs[0].set_ylabel("best score"); axs[0].legend(fontsize=8)
     axs[0].set_title("GB-GA optimisation")
-    # metric bars
+
     ms = {k: d[f"metrics_{k}"] for k in ("extractant", "control", "random") if f"metrics_{k}" in d}
     keys = ["uniqueness", "novelty", "int_div"]
     xpos = np.arange(len(keys)); w = 0.25

@@ -1,15 +1,3 @@
-"""Re-score top generated candidates with REAL X2C-PBE0(DF) actinide/lanthanide
-binding. For each candidate we estimate the complexation energy to a hard
-trivalent cation at fixed (RDKit/MMFF) ligand geometry with the metal placed at
-the donor centroid (a vertical/rigid estimate -- fast, and the rigid-geometry
-error largely cancels in the An/Ln DIFFERENCE):
-
-  dE(M)  = E[M.L]^(3+) - E[L] - E[M]^3+      (M = La(III,4f0), Ac(III,5f0))
-  ddE    = dE(Ac) - dE(La)                    < 0  => An(III)-selective
-
-This ties the generative pipeline back to the relativistic-DFT core (Stage 1) and
-gives a genuine, if approximate, An/Ln covalency-driven selectivity number.
-"""
 import os, sys, json
 import numpy as np
 from rdkit import Chem
@@ -41,7 +29,7 @@ def ligand_geom(smiles, seed=1):
     return syms, xyz, donors
 
 def metal_position(xyz, donors, k=3):
-    # place metal outside the donor centroid, >=2.2 A from the nearest donor
+
     sel = donors[:k] if len(donors) >= k else donors
     c = xyz[sel].mean(0); com = xyz.mean(0)
     v = c - com; nv = np.linalg.norm(v)
@@ -74,8 +62,7 @@ def rescore(smiles, metals=(("La",3),("Ac",3)), max_heavy=24):
 
 if __name__ == "__main__":
     top = json.load(open("results/generative/top_candidates.json"))
-    # Focus on small canonical donor motifs: fast AND a chemically meaningful An/Ln
-    # trend across hard-O (amide/diglycolamide) vs soft-N (pyridine/triazine) donors.
+
     refs = ["O=CN", "CC(=O)N", "NC(=O)CO", "NC(=O)COCC(=O)N", "c1ccncc1", "c1cnncn1"]
     results = []
     for i, smi in enumerate((refs + top[:2])):

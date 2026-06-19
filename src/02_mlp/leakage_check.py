@@ -1,17 +1,9 @@
-"""Reviewer-2 (data/leakage) response: quantify that the train/test split does NOT
-leak near-duplicate configurations. For each test frame we find its nearest TRAIN
-frame in a rotation/translation-invariant descriptor space (sorted pairwise
-distance vector incl. the U centre) and report the distribution of nearest-neighbour
-distances. If test frames had near-duplicates in train (the leakage failure mode),
-these distances would be ~0; a healthy gap confirms independence. We also report the
-analogous distances for the OOD scan set (expected: far from train).
-"""
 import json, numpy as np
 from ase.io import read
 from scipy.spatial.distance import pdist, cdist
 
 def descriptor(a):
-    # sorted full pairwise-distance vector -> permutation/rotation/translation invariant
+
     return np.sort(pdist(a.get_positions()))
 
 frames = read("results/mlp/uo2_dataset.extxyz", ":")
@@ -25,10 +17,9 @@ Dtr = np.array([descriptor(a) for a in train])
 Dte = np.array([descriptor(a) for a in test])
 Doo = np.array([descriptor(a) for a in ood])
 
-# nearest-train distance for each test / ood frame
 nn_test = cdist(Dte, Dtr).min(1)
 nn_ood = cdist(Doo, Dtr).min(1)
-# intra-train nearest-neighbour scale for reference
+
 intra = []
 M = cdist(Dtr, Dtr); np.fill_diagonal(M, np.inf)
 intra = M.min(1)

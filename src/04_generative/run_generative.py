@@ -1,9 +1,3 @@
-"""Stage 4 driver: train donor-strength surrogate on DFT V_min labels, run
-surrogate-guided GB-GA extractant design, and compare against baselines
-(GB-GA on a control objective; random-from-prior). Reports the standard de novo
-metrics (validity / uniqueness / novelty / internal diversity / SAscore) and saves
-top candidates for X2C-DFT actinide/lanthanide re-scoring.
-"""
 import os, sys, json
 import numpy as np
 sys.path.insert(0, os.path.dirname(__file__))
@@ -64,7 +58,6 @@ if __name__ == "__main__":
     print("\n=== GB-GA: control objective (logP only) ===", flush=True)
     recs_ctl, hist_ctl = gb_ga.run_ga(seeds, control, pop_size=80, n_gen=25, rng_seed=1)
 
-    # random-from-prior baseline: mutate seeds without selection
     import random; random.seed(0)
     mols = [Chem.MolFromSmiles(s) for s in seeds]
     rand_lib = []
@@ -82,7 +75,6 @@ if __name__ == "__main__":
         history_extractant=hist_ext, history_control=hist_ctl,
     )
 
-    # characterise top extractant candidates (real scored properties)
     top = []
     for r in recs_ext[:15]:
         t = molecular_terms(r["smiles"])
@@ -92,7 +84,7 @@ if __name__ == "__main__":
                         nF=t["nF"], mw=round(t["mw"],1), sa=round(t["sa"],2),
                         novel=Chem.MolToSmiles(Chem.MolFromSmiles(r["smiles"])) not in reference))
     res["top_candidates"] = top
-    # summary: mean donor strength of best-10 per objective
+
     def mean_donor(recs):
         vs = [surr.predict(r["smiles"]) for r in recs[:10]]
         vs = [v for v in vs if v is not None]

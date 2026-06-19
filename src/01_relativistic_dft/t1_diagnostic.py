@@ -1,8 +1,3 @@
-"""Reviewer-1 response: a real T1 coupled-cluster diagnostic for uranyl, to TEST
-(not assert) the adequacy of single-reference treatment for the closed-shell f0
-actinyl. T1 << 0.02 supports single-reference; larger flags multireference need.
-Frozen-core DF-CCSD on the X2C-RHF reference, def2-SVP ligand basis for tractability.
-"""
 import json, numpy as np
 from pyscf import gto, scf, cc
 import sys, os
@@ -15,8 +10,8 @@ mol = gto.M(atom=atoms, basis=basis, charge=2, spin=0, verbose=3, max_memory=110
 mf = scf.RHF(mol).x2c().density_fit()
 mf.conv_tol = 1e-9
 mf.kernel()
-# freeze deep core (U has many core electrons); freeze ~ up to 5p of U + O 1s
-nfroze = 43   # approx: U [Rn]-core-ish frozen; conservative
+
+nfroze = 43
 mycc = cc.CCSD(mf, frozen=nfroze)
 mycc.max_cycle = 80
 mycc.kernel()

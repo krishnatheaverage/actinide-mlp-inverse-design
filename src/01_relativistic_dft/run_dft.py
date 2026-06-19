@@ -1,16 +1,3 @@
-"""
-Stage 1 production: scalar-X2C PBE0 reference calculations (density-fitted) on
-CLOSED-SHELL f0 actinide/lanthanide centres, where single-reference DFT is
-defensible (uranyl U(VI), Th(IV), La(III), Ac(III)).
-
-Outputs (all REAL):
-  (A) relativistic effect: X2C vs non-relativistic U=O bond length in uranyl
-  (B) ligand complexation energies (counterpoise/BSSE-corrected) for hard O/N donors
-  (C) An/Ln selectivity proxy: same donor bound to La(III) [Ln, 4f0] vs Ac(III)
-      [An, 5f0] vs Th(IV) vs uranyl -- a clean covalency comparison, no open f-shell
-
-Geometry optimisation via geomeTRIC. Energies in Hartree; deltas in kJ/mol.
-"""
 import sys, os, json, time
 import numpy as np
 from pyscf import gto, dft
@@ -45,11 +32,10 @@ def opt_geometry(atoms, charge, spin, maxsteps=80, **kw):
 def uranyl(r_uo=1.78):
     return [["U",(0,0,0)],["O",(0,0,r_uo)],["O",(0,0,-r_uo)]]
 
-# ---- (A) relativistic vs non-relativistic uranyl bond ----
 def relativistic_effect():
     print("\n[A] Relativistic effect on uranyl U=O bond", flush=True)
     out = {}
-    # scan U=O distance, X2C vs nonrel, fit minimum
+
     rs = np.arange(1.66, 1.92, 0.02)
     for tag, x2c in (("x2c", True), ("nonrel", False)):
         es = []
@@ -60,7 +46,7 @@ def relativistic_effect():
             mf.xc="PBE0"; mf.conv_tol=1e-9
             es.append(mf.kernel())
         es=np.array(es)
-        # parabola fit near min
+
         i=es.argmin(); sl=slice(max(0,i-2),i+3)
         c=np.polyfit(rs[sl],es[sl],2); rmin=-c[1]/(2*c[0])
         out[tag]=dict(r_min=float(rmin), e_min=float(es.min()),
@@ -70,25 +56,23 @@ def relativistic_effect():
     print(f"  relativistic bond contraction = {out['contraction_A']*100:.2f} pm", flush=True)
     return out
 
-# ---- (B,C) complexation + selectivity ----
 def water(): return [["O",(0,0,0)],["H",(0.757,0.586,0)],["H",(-0.757,0.586,0)]]
-def acetate():  # CH3COO-
+def acetate():
     return [["C",(0,0,0)],["O",(1.25,0,0)],["O",(-0.6,1.08,0)],
             ["C",(-0.7,-1.28,0)],["H",(-1.79,-1.22,0)],["H",(-0.36,-1.82,0.89)],["H",(-0.36,-1.82,-0.89)]]
 
 def binding_energy(metal, mq, lig_atoms, lig_charge, lig_spin, n_lig=1,
                    m_template=None, label=""):
-    """M(q+) + n L -> [M L_n](q+n*lc); counterpoise-corrected complexation energy."""
     t0=time.time()
-    # optimise free metal ion is trivial (single atom) -> energy only
+
     e_M = sp_energy([[metal,(0,0,0)]], mq, 0)
     e_L = sp_energy(lig_atoms, lig_charge, lig_spin)
-    # assemble complex: metal at origin, ligand(s) placed around it
+
     complex_atoms = [[metal,(0.0,0.0,0.0)]]
-    # crude initial placement of ligand donor toward +x; replicate around axis
+
     import math
     base = np.array([a[1] for a in lig_atoms]); syms=[a[0] for a in lig_atoms]
-    # shift ligand so first atom ~2.4 A from metal along +x
+
     shift = np.array([2.4,0,0]) - base[0]
     for k in range(n_lig):
         ang = 2*math.pi*k/max(n_lig,1)
@@ -110,7 +94,7 @@ if __name__=="__main__":
     results["relativistic_effect"]=relativistic_effect()
     print("\n[B/C] Complexation + An/Ln selectivity (acetate donor)", flush=True)
     sel=[]
-    # uranyl handled separately (linear dioxo core kept); here trivalent/tetravalent ions
+
     for metal, mq in (("La",3),("Ac",3),("Th",4)):
         try:
             sel.append(binding_energy(metal, mq, acetate(), -1, 0, n_lig=1,

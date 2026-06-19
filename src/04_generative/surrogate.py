@@ -1,8 +1,3 @@
-"""Donor-strength surrogate: RDKit features -> DFT V_min. Trained with a
-SCAFFOLD-based train/test split (not random) so the reported R^2/RMSE reflect
-generalisation to unseen chemotypes, not memorisation of near-duplicates --
-the honest analogue of the leakage concern for property models.
-"""
 import numpy as np
 from collections import defaultdict
 from rdkit import Chem
@@ -22,7 +17,7 @@ def scaffold_split(smiles, frac_train=0.8, seed=0):
         buckets[scaf or f"_singleton_{i}"].append(i)
     groups = sorted(buckets.values(), key=len, reverse=True)
     rng = np.random.default_rng(seed)
-    # greedily fill train to frac_train, scattering big scaffolds
+
     n = len(smiles); n_train = int(frac_train*n)
     train, test = [], []
     for g in groups:
@@ -48,7 +43,7 @@ class DonorSurrogate:
                        mae_scaffold=float(mean_absolute_error(y[te], pred)),
                        n_train=int(len(tr)), n_test=int(len(te)),
                        y_std=float(y.std()))
-        # refit on all data for deployment
+
         self.model.fit(Xs, y)
         return metrics
 

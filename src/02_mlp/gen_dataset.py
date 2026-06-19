@@ -1,18 +1,5 @@
-"""
-Stage 2 data generation (PARALLEL): build a labelled configuration set for an MLP
-of the closed-shell uranyl aqua complex UO2(H2O)4^2+, with X2C-PBE0(DF) energies+
-forces. DFT labelling and the numerical Hessian are parallelised over a process
-pool for ~Nworker speed-up on the M-series CPU.
-
-Sampling sources (kept SEPARATE -> leakage-controlled split + OOD test):
-  NMS-T : thermal normal-mode sampling at T = 300, 600, 1000 K
-  SCAN  : U=O and U-O(water) bond-stretch scans (held out as OOD)
-The numerical Hessian also yields real uranyl stretch frequencies (vs experiment).
-
-Output: results/mlp/uo2_dataset.extxyz (energy eV, forces eV/A, config_type tag).
-"""
 import os, sys, json, time
-os.environ.setdefault("OMP_NUM_THREADS", "1")  # single-thread per worker
+os.environ.setdefault("OMP_NUM_THREADS", "1")
 import numpy as np
 from multiprocessing import Pool
 from pyscf import gto, dft
@@ -43,7 +30,6 @@ def energy_grad(atoms, charge=2, spin=0):
     g = mf.nuc_grad_method().kernel()
     return e, g
 
-# ---- top-level worker (picklable) ----
 def _eg(payload):
     syms, coords, ctype = payload
     atoms = [[syms[i], tuple(coords[i])] for i in range(len(syms))]
@@ -63,7 +49,6 @@ def init_uo2_4w():
     return a
 
 def parallel_hessian(syms, coords, pool, disp=0.01):
-    """Central-difference Hessian from analytic gradients, parallel. disp in Angstrom."""
     n = len(syms); d_bohr = disp / BOHR2A
     jobs = []
     for i in range(n):

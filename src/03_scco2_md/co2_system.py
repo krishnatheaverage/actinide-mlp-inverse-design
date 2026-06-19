@@ -1,55 +1,31 @@
-"""
-TraPPE-CO2 rigid 3-site model in OpenMM (Potoff & Siepmann, AIChE J. 47, 1676, 2001).
-
-Parameters (REAL, published):
-  C : sigma = 2.80 A, eps/kB = 27.0 K, q = +0.70 e
-  O : sigma = 3.05 A, eps/kB = 79.0 K, q = -0.35 e
-  r(C=O) = 1.16 A, angle O=C=O = 180 deg (rigid linear via 3 constraints)
-  combining rules: Lorentz-Berthelot (OpenMM NonbondedForce default)
-
-Builds an N-molecule cubic box at an approximate target density and returns an
-OpenMM System + initial positions + Topology. Equilibration/barostat handled by
-the caller.
-"""
 import numpy as np
 import openmm as mm
 from openmm import unit
 from openmm.app import Topology, Element
 
-KB = unit.BOLTZMANN_CONSTANT_kB * unit.AVOGADRO_CONSTANT_NA  # per-mole kB
+KB = unit.BOLTZMANN_CONSTANT_kB * unit.AVOGADRO_CONSTANT_NA
 
-# TraPPE-CO2 in OpenMM units (nm, kJ/mol, e)
 SIG_C, EPS_C, Q_C = 0.280, 27.0 * 0.00831446262, +0.70
 SIG_O, EPS_O, Q_O = 0.305, 79.0 * 0.00831446262, -0.35
-R_CO = 0.116           # nm (rigid, constrained)
-R_OO = 2.0 * R_CO      # nm (linear O=C=O)
-# CO2 is linear; three collinear distance constraints are rank-deficient and break
-# OpenMM's CCMA solver. We instead constrain the two C-O bonds (rigid) and enforce
-# linearity with a STIFF harmonic O-O bond -- no constraint degeneracy, well-defined
-# at 180 deg. K_OO is large so the bend mode is high-frequency and CO2 stays linear.
-K_OO = 80000.0         # kJ/mol/nm^2
+R_CO = 0.116
+R_OO = 2.0 * R_CO
+
+K_OO = 80000.0
 M_C, M_O = 12.011, 15.999
-M_CO2_GMOL = M_C + 2 * M_O  # 44.009
+M_CO2_GMOL = M_C + 2 * M_O
 
 AVOG = 6.02214076e23
 
-
 def box_edge_for_density(n_co2, rho_gcc):
-    """Cubic box edge (nm) giving target mass density (g/cm^3) for n CO2."""
     mass_g = n_co2 * M_CO2_GMOL / AVOG
     vol_cm3 = mass_g / rho_gcc
     vol_nm3 = vol_cm3 * 1e21
     return vol_nm3 ** (1.0 / 3.0)
 
-
 def build_co2_box(n_co2, rho_gcc=0.70, seed=0, cutoff_nm=1.3):
-    """Return (system, positions[nm], topology, box_edge_nm).
-
-    Molecules placed on a jittered cubic lattice with random linear orientation.
-    """
     rng = np.random.default_rng(seed)
     L = box_edge_for_density(n_co2, rho_gcc)
-    # lattice
+
     n_side = int(np.ceil(n_co2 ** (1.0 / 3.0)))
     spacing = L / n_side
     centers = []
@@ -80,7 +56,7 @@ def build_co2_box(n_co2, rho_gcc=0.70, seed=0, cutoff_nm=1.3):
 
     oo_bond = mm.HarmonicBondForce()
     for c in centers:
-        # random linear orientation
+
         v = rng.normal(size=3); v /= np.linalg.norm(v)
         pos_C = c
         pos_O1 = c + v * R_CO
@@ -91,11 +67,11 @@ def build_co2_box(n_co2, rho_gcc=0.70, seed=0, cutoff_nm=1.3):
         nb.addParticle(Q_C, SIG_C, EPS_C)
         nb.addParticle(Q_O, SIG_O, EPS_O)
         nb.addParticle(Q_O, SIG_O, EPS_O)
-        # rigid C-O bonds via constraints; linearity via stiff harmonic O-O
+
         system.addConstraint(iC, iO1, R_CO)
         system.addConstraint(iC, iO2, R_CO)
         oo_bond.addBond(iO1, iO2, R_OO, K_OO)
-        # exclude intramolecular nonbonded (1-2 and 1-3)
+
         nb.addException(iC, iO1, 0.0, 1.0, 0.0)
         nb.addException(iC, iO2, 0.0, 1.0, 0.0)
         nb.addException(iO1, iO2, 0.0, 1.0, 0.0)
@@ -109,7 +85,6 @@ def build_co2_box(n_co2, rho_gcc=0.70, seed=0, cutoff_nm=1.3):
     system.addForce(oo_bond)
     top.setPeriodicBoxVectors([[box, 0, 0], [0, box, 0], [0, 0, box]] * unit.nanometer)
     return system, np.array(positions) * unit.nanometer, top, L
-
 
 if __name__ == "__main__":
     for n in (256, 500, 1000):

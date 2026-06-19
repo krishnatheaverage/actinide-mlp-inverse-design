@@ -1,14 +1,3 @@
-"""Train a MACE potential on the UO2(H2O)4^2+ X2C-DFT dataset and evaluate it
-under a leakage-aware protocol:
-  - train/val/test drawn from the normal-mode-sampled frames, which are IID draws
-    (not an autocorrelated MD trajectory), so a random split among them does not
-    leak correlated near-duplicates;
-  - the U=O / U-O(water) bond-stretch SCANS are held out ENTIRELY as an
-    out-of-distribution (OOD) extrapolation test;
-  - errors are reported element-resolved (U centre vs O vs H) so heavy-atom error
-    is not masked by abundant light atoms.
-Runs on the Apple GPU (MPS).
-"""
 import os, sys, json, subprocess, shutil
 import numpy as np
 from ase.io import read, write
@@ -66,7 +55,7 @@ def evaluate():
         e_ref_all, e_pred_all, f_ref_all, f_pred_all = [], [], [], []
         for a in frames:
             n = len(a)
-            # ASE extxyz round-trip attaches energy/forces to a SinglePointCalculator
+
             e_ref = a.info.get("energy", a.get_potential_energy())
             f_ref = a.arrays["forces"] if "forces" in a.arrays else a.get_forces()
             a2 = a.copy(); a2.calc = calc

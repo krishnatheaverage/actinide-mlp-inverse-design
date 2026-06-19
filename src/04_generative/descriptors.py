@@ -1,5 +1,3 @@
-"""RDKit feature vector for the donor-strength surrogate (compact, interpretable;
-low-variance for a few-hundred-molecule training set)."""
 import numpy as np
 from rdkit import Chem
 from rdkit.Chem import Descriptors, rdMolDescriptors, Crippen

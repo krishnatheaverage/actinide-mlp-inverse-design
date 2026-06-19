@@ -1,9 +1,3 @@
-"""Reviewer-1 response: recompute the uranyl relativistic bond effect with a
-DECONTRACTED basis, so X2C-on vs X2C-off is basis-consistent (the SARC-DKH2
-contraction is optimised for the relativistic Hamiltonian, biasing the naive
-comparison). Uncontracting frees the primitives to describe both the relativistic
-and non-relativistic density on equal footing.
-"""
 import json, numpy as np
 from pyscf import gto, dft
 import sys, os

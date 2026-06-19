@@ -1,15 +1,3 @@
-"""
-Probe PySCF relativistic (X2C) capabilities for actinides on this machine.
-
-Goal: determine, empirically, BEFORE committing to a dataset scale:
-  (1) which all-electron relativistic basis sets are usable for U / Th,
-  (2) whether scalar-X2C (sfx2c1e) DFT SCF converges for uranyl (UO2^2+),
-  (3) whether ANALYTIC X2C-DFT gradients are available (decisive for MLP data),
-  (4) wall-clock per SCF and per gradient at SVP vs TZVP quality,
-  (5) the relativistic vs non-relativistic U=O bond effect (sanity physics).
-
-Everything printed here is REAL output; nothing is hard-coded.
-"""
 import time, sys, traceback
 import numpy as np
 
@@ -27,14 +15,13 @@ except Exception as e:
     print("basis_set_exchange MISSING:", e)
     HAVE_BSE = False
 
-# ---- candidate all-electron relativistic basis sets for actinides ----
 CANDIDATES = ["x2c-SVPall", "x2c-TZVPall", "ANO-RCC-VDZP", "ANO-RCC-VTZP",
               "SARC-DKH2", "sarc2-dkh-qzvp", "jorge-DZP", "dyall-vdz"]
 
 def try_pyscf_internal(name, elem="U"):
     try:
         b = gto.basis.load(name, elem)
-        return ("internal", sum(len(s)-1 for s in b))  # crude contraction count
+        return ("internal", sum(len(s)-1 for s in b))
     except Exception as e:
         return ("fail-internal", str(e)[:60])
 
@@ -58,7 +45,6 @@ for name in CANDIDATES:
 print("USABLE:", usable)
 
 def get_basis_dict(name, elements):
-    """Return a PySCF basis dict for the given elements, internal first then BSE."""
     out = {}
     for el in elements:
         try:
@@ -70,9 +56,8 @@ def get_basis_dict(name, elements):
             out[el] = gto.basis.parse(s)
     return out
 
-# ---- pick the smallest usable basis for a timing test on uranyl ----
 def build_uranyl(basis_name, n_water=0):
-    # linear uranyl UO2^2+ ; U=O ~1.78 A ; optional equatorial waters in plane
+
     atoms = [["U", (0.0, 0.0, 0.0)],
              ["O", (0.0, 0.0,  1.78)],
              ["O", (0.0, 0.0, -1.78)]]
@@ -82,7 +67,7 @@ def build_uranyl(basis_name, n_water=0):
         r = 2.45
         ox = (r*math.cos(ang), r*math.sin(ang), 0.0)
         atoms.append(["O", ox])
-        # two H's roughly pointing outward
+
         atoms.append(["H", (ox[0]*1.10+0.3, ox[1]*1.10, 0.59)])
         atoms.append(["H", (ox[0]*1.10+0.3, ox[1]*1.10, -0.59)])
     bdict = get_basis_dict(basis_name, ["U", "O", "H"])
@@ -100,14 +85,14 @@ for basis_name in usable[:2]:
         try:
             t0 = time.time()
             mol = build_uranyl(basis_name, n_water=nw)
-            mf = dft.RKS(mol).x2c()       # scalar relativistic X2C (sfx2c1e)
+            mf = dft.RKS(mol).x2c()
             mf.xc = "PBE0"
             mf.max_cycle = 80
             e = mf.kernel()
             t_scf = time.time() - t0
             conv = mf.converged
             nao = mol.nao_nr()
-            # gradient availability + timing
+
             tg, gmax, gmode = None, None, "none"
             try:
                 t1 = time.time()

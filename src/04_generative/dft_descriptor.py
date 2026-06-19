@@ -1,14 +1,3 @@
-"""
-Cheap, reliable DFT donor-strength descriptor for a ligand SMILES:
-the minimum molecular electrostatic potential (V_min, a.u.) sampled around the
-donor atoms (N,O,F,S,P). More negative V_min = stronger Lewis base = stronger
-hard-cation affinity. This is a standard ESP-based reactivity descriptor and,
-unlike a tight-binding metal-binding energy, it is reliable for light-atom
-organics with fast non-relativistic DFT (no heavy atom -> no X2C needed).
-
-Used as the surrogate's regression target. Top generated candidates are later
-re-scored with real X2C-DFT actinide/lanthanide binding (run_rescore.py).
-"""
 import numpy as np
 from rdkit import Chem
 from rdkit.Chem import AllChem
@@ -29,7 +18,6 @@ def embed_3d(smiles, seed=1):
     return m
 
 def probe_points(coords, syms, n_sphere=12, radii=(1.6, 2.0)):
-    """Fibonacci-sphere probe points around each donor atom (Angstrom)."""
     idx = [i for i,s in enumerate(syms) if s in DONORS]
     if not idx: return None
     pts = []
@@ -44,13 +32,12 @@ def probe_points(coords, syms, n_sphere=12, radii=(1.6, 2.0)):
     return np.array(pts)
 
 def esp_at_points(mol, dm, pts_ang):
-    """Molecular electrostatic potential (a.u.) at points (Angstrom)."""
     pts = pts_ang*ANG2BOHR
-    # electronic contribution via PySCF's optimised grid integral
+
     Vele = -np.einsum('pij,ij->p', mol.intor('int1e_grids', grids=pts), dm)
-    # nuclear contribution
+
     Vnuc = np.zeros(len(pts))
-    coords = mol.atom_coords()  # bohr
+    coords = mol.atom_coords()
     charges = mol.atom_charges()
     for A in range(mol.natm):
         d = np.linalg.norm(pts - coords[A], axis=1)
@@ -71,7 +58,7 @@ def vmin_descriptor(smiles, xc="PBE", basis="def2-SVP", seed=1):
         mf = dft.RKS(mol).density_fit(); mf.xc = xc; mf.conv_tol = 1e-8
         mf.kernel()
         dm = mf.make_rdm1()
-        # exclude probe points that fall inside another atom (too close)
+
         keep = np.ones(len(pts), bool)
         cb = mol.atom_coords()/ANG2BOHR
         for A in range(mol.natm):

@@ -1,8 +1,3 @@
-"""Build the surrogate training set: assemble a diverse ligand pool (real
-extractants + RDKit/GB-GA-generated analogues + donor fragments), then label each
-with the DFT V_min donor-strength descriptor. Parallel over CPU cores, resumable
-(caches to results/generative/vmin_labels.json).
-"""
 import os, sys, json, random
 import numpy as np
 from multiprocessing import Pool
@@ -15,14 +10,14 @@ import gb_ga
 from dft_descriptor import vmin_descriptor
 
 CACHE = "results/generative/vmin_labels.json"
-MAX_HEAVY = 18          # cap for DFT affordability
-N_AUG = 60              # GB-GA analogues to add
+MAX_HEAVY = 18
+N_AUG = 60
 
 def assemble_pool(seed=3):
     random.seed(seed)
     rows, _ = load_validated(verbose=False)
     pool = set()
-    for r in rows:                                   # real extractants + fragments
+    for r in rows:
         m = Chem.MolFromSmiles(r["smiles"])
         if m and m.GetNumHeavyAtoms() <= MAX_HEAVY:
             pool.add(r["smiles"])
@@ -55,8 +50,7 @@ if __name__ == "__main__":
     pool = assemble_pool()
     todo = [s for s in pool if s not in cache]
     print(f"pool={len(pool)} cached={len(cache)} todo={len(todo)}", flush=True)
-    # SEQUENTIAL (robust on macOS; multiprocessing.Pool + PySCF spawn is fragile).
-    # PySCF uses OMP threads per molecule for intra-molecule parallelism.
+
     import time; t0 = time.time()
     for i, smi in enumerate(todo):
         _, r = _label(smi)

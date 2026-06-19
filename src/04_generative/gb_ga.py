@@ -1,11 +1,3 @@
-"""
-Graph-based genetic algorithm for molecules (Jensen, Chem. Sci. 10, 3567, 2019),
-reimplemented on modern RDKit using FragmentOnBonds + molzip for crossover.
-
-This is the field-standard strong baseline that any de novo generator must beat
-(Reviewer-2 demands it). Used here both as a baseline AND as the search engine
-driven by the extractant scoring function.
-"""
 import random
 import numpy as np
 from rdkit import Chem
@@ -13,24 +5,22 @@ from rdkit.Chem import RWMol, BRICS
 from rdkit import RDLogger
 RDLogger.DisableLog("rdApp.*")
 
-# ---------- mutation operators (reaction SMARTS) ----------
 _MUT_RXNS = [
-    # append atom
+
     "[*;!H0:1]>>[*:1]-[C]", "[*;!H0:1]>>[*:1]-[N]", "[*;!H0:1]>>[*:1]-[O]",
     "[*;!H0:1]>>[*:1]=[C]", "[*;!H0:1]>>[*:1]-[F]",
-    # insert atom into a bond
+
     "[*:1]-[*:2]>>[*:1]-[C]-[*:2]", "[*:1]-[*:2]>>[*:1]-[N]-[*:2]",
     "[*:1]-[*:2]>>[*:1]-[O]-[*:2]",
-    # change atom identity
+
     "[#6:1]>>[#7:1]", "[#7:1]>>[#6:1]", "[#6:1]>>[#8:1]", "[#8:1]>>[#6:1]",
-    # change bond order
+
     "[*:1]-[*:2]>>[*:1]=[*:2]", "[*:1]=[*:2]>>[*:1]-[*:2]",
-    # delete a terminal atom
+
     "[*:1]-[*;D1]>>[*:1]",
 ]
 from rdkit.Chem import AllChem
 _MUT = [AllChem.ReactionFromSmarts(s) for s in _MUT_RXNS]
-
 
 def _sane(mol):
     if mol is None:
@@ -40,7 +30,7 @@ def _sane(mol):
         m = Chem.MolFromSmiles(smi)
         if m is None:
             return None
-        # reject radicals / disconnected / too small/large
+
         if "." in smi:
             return None
         n = m.GetNumAtoms()
@@ -51,7 +41,6 @@ def _sane(mol):
         return m
     except Exception:
         return None
-
 
 def mutate(mol, n_try=10):
     for _ in range(n_try):
@@ -67,16 +56,14 @@ def mutate(mol, n_try=10):
             return cand
     return None
 
-
 def crossover(a, b, n_try=10):
-    """Cut one non-ring single bond in each parent, recombine via molzip."""
     for _ in range(n_try):
         try:
             fa = _cut(a)
             fb = _cut(b)
             if fa is None or fb is None:
                 continue
-            # take one piece from each and zip the dummy ends
+
             pa = random.choice(fa)
             pb = random.choice(fb)
             combo = Chem.CombineMols(pa, pb)
@@ -90,7 +77,6 @@ def crossover(a, b, n_try=10):
             continue
     return None
 
-
 def _cut(mol):
     bonds = [bd.GetIdx() for bd in mol.GetBonds()
              if not bd.IsInRing()
@@ -98,7 +84,7 @@ def _cut(mol):
     if not bonds:
         return None
     bidx = random.choice(bonds)
-    # fragment with dummy atoms labelled so molzip can rejoin
+
     frag = Chem.FragmentOnBonds(mol, [bidx], addDummies=True, dummyLabels=[(1, 1)])
     pieces = Chem.GetMolFrags(frag, asMols=True, sanitizeFrags=False)
     good = []
@@ -110,14 +96,8 @@ def _cut(mol):
             pass
     return good or None
 
-
 def run_ga(seed_smiles, score_fn, pop_size=60, n_gen=20, mut_rate=0.4,
            elitism=0.2, rng_seed=0, log=print):
-    """Evolve a population maximising score_fn(smiles)->float.
-
-    Returns (best_records, history) where best_records is a list of
-    dicts {smiles, score} sorted descending, and history is per-gen best/mean.
-    """
     random.seed(rng_seed); np.random.seed(rng_seed)
     pop = []
     seen = set()
@@ -127,7 +107,7 @@ def run_ga(seed_smiles, score_fn, pop_size=60, n_gen=20, mut_rate=0.4,
             cs = Chem.MolToSmiles(m)
             if cs not in seen:
                 seen.add(cs); pop.append(m)
-    # pad population by mutating seeds
+
     while len(pop) < pop_size:
         base = random.choice(pop)
         c = mutate(base)
@@ -156,7 +136,7 @@ def run_ga(seed_smiles, score_fn, pop_size=60, n_gen=20, mut_rate=0.4,
         scored.sort(key=lambda t: t[2], reverse=True)
         n_elite = max(1, int(elitism * pop_size))
         elites = scored[:n_elite]
-        # fitness-proportional-ish selection from top half
+
         parents = [t for t in scored[:max(2, pop_size // 2)]]
         children = list(elites)
         guard = 0
@@ -191,9 +171,8 @@ def run_ga(seed_smiles, score_fn, pop_size=60, n_gen=20, mut_rate=0.4,
                   key=lambda d: d["score"], reverse=True)
     return recs, history
 
-
 if __name__ == "__main__":
-    # self-test: do crossover/mutation actually produce valid novel molecules?
+
     import sys, os
     sys.path.insert(0, os.path.dirname(__file__))
     from extractant_library import load_validated
@@ -210,7 +189,7 @@ if __name__ == "__main__":
         c = crossover(a, b)
         if c: n_cx_ok += 1
     print(f"mutate success {n_mut_ok}/200, crossover success {n_cx_ok}/200")
-    # tiny GA driven by a trivial score (maximise #N donors - heavy penalty on size)
+
     from rdkit.Chem import Descriptors
     def toy_score(smi):
         m = Chem.MolFromSmiles(smi)

@@ -1,9 +1,3 @@
-"""
-Validate the TraPPE-CO2 model against the Span-Wagner reference EOS (CoolProp)
-across supercritical state points. NPT equilibration + production; report mean
-density vs the EOS, addressing the "single fixed density misrepresents a
-near-critical fluid" critique by sweeping an isotherm.
-"""
 import sys, os, time, json
 import numpy as np
 sys.path.insert(0, os.path.dirname(__file__))
@@ -25,15 +19,15 @@ def pick_platform():
     raise RuntimeError("no platform")
 
 def density_gcc(system, box_vec_nm, n_co2):
-    # box_vec_nm: edge length (cubic)
+
     vol_nm3 = box_vec_nm**3
     vol_cm3 = vol_nm3 * 1e-21
     mass_g = n_co2 * M_CO2_GMOL / AVOG
     return mass_g / vol_cm3
 
 def run_state_point(T_K, P_bar, n_co2=500, eq_ps=120, prod_ps=300, seed=1, plat=None):
-    rho_eos = PropsSI("D", "T", T_K, "P", P_bar*1e5, "CO2") / 1000.0  # kg/m3 -> g/cc
-    # pack at safe low density, then compress with the barostat
+    rho_eos = PropsSI("D", "T", T_K, "P", P_bar*1e5, "CO2") / 1000.0
+
     system, pos, top, L = build_co2_box(n_co2, rho_gcc=0.25, seed=seed)
     system.addForce(mm.MonteCarloBarostat(P_bar*unit.bar, T_K*unit.kelvin, 25))
     integ = mm.LangevinMiddleIntegrator(T_K*unit.kelvin, 1.0/unit.picosecond, 0.001*unit.picoseconds)
@@ -42,10 +36,10 @@ def run_state_point(T_K, P_bar, n_co2=500, eq_ps=120, prod_ps=300, seed=1, plat=
     sim.context.setPositions(pos)
     sim.minimizeEnergy(maxIterations=1000)
     sim.context.setVelocitiesToTemperature(T_K*unit.kelvin, seed)
-    sim.step(5000)  # 5 ps gentle start at 1 fs
+    sim.step(5000)
     integ.setStepSize(0.002*unit.picoseconds)
-    sim.step(int(eq_ps/0.002))  # equilibrate at 2 fs
-    # production: sample box volume
+    sim.step(int(eq_ps/0.002))
+
     nsteps = int(prod_ps/0.002); stride = 500
     dens = []
     t0 = time.time()
@@ -68,7 +62,7 @@ def run_state_point(T_K, P_bar, n_co2=500, eq_ps=120, prod_ps=300, seed=1, plat=
 if __name__ == "__main__":
     plat = pick_platform()
     print("platforms:", plat[2], "-> using", plat[0].getName(), flush=True)
-    # T=320 K isotherm sweep (supercritical) + a near-critical point
+
     state_points = [(320, 80), (320, 100), (320, 150), (320, 200), (320, 300), (310, 75)]
     results = []
     for T, P in state_points:
