@@ -1,5 +1,7 @@
 # Hyper-Relativistic MLP / Inverse-Design Workflow for Actinide Extractants in scCO₂
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20764583.svg)](https://doi.org/10.5281/zenodo.20764583)
+
 A fully open, laptop-scale, end-to-end and **reproducible** computational workflow:
 relativistic DFT reference data → machine-learning interatomic potential → supercritical-CO₂
 free-energy MD → surrogate-guided generative ligand design, with an X2C-DFT actinide/lanthanide
