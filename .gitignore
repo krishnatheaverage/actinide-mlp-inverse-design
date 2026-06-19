@@ -10,3 +10,4 @@ paper/*.log
 paper/*.out
 paper/*.bbl
 paper/*.blg
+!results/mlp/uo2_mace_stagetwo.model
